@@ -3,112 +3,970 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>jusuho</title>
+    <title>趙守浩 | Engineering Leader</title>
+    <meta
+      name="description"
+      content="趙守浩的個人網站。聚焦工程團隊建立、架構現代化、交付流程標準化與營運導向的技術管理。"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Noto+Serif+TC:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <style>
       :root {
         color-scheme: light;
-        --bg: #f4efe6;
-        --fg: #16221f;
-        --accent: #c4572e;
-        --panel: rgba(255, 252, 247, 0.84);
-        --border: rgba(22, 34, 31, 0.12);
+        --bg: #f6f1e8;
+        --bg-strong: #efe4d4;
+        --surface: rgba(255, 250, 243, 0.8);
+        --surface-strong: #fffaf3;
+        --text: #1d281f;
+        --text-soft: #4a584e;
+        --line: rgba(29, 40, 31, 0.12);
+        --line-strong: rgba(29, 40, 31, 0.24);
+        --accent: #b85b34;
+        --accent-deep: #7f3b1f;
+        --shadow: 0 30px 90px rgba(33, 31, 24, 0.1);
+        --radius-xl: 32px;
+        --radius-lg: 24px;
+        --radius-md: 18px;
+        --max-width: 1180px;
       }
 
       * {
         box-sizing: border-box;
       }
 
+      html {
+        scroll-behavior: smooth;
+      }
+
       body {
         margin: 0;
         min-height: 100vh;
-        font-family: "Iowan Old Style", "Palatino Linotype", serif;
-        color: var(--fg);
+        font-family: "Manrope", sans-serif;
+        color: var(--text);
         background:
-          radial-gradient(circle at top left, rgba(196, 87, 46, 0.18), transparent 30%),
-          radial-gradient(circle at bottom right, rgba(22, 34, 31, 0.12), transparent 35%),
-          var(--bg);
-        display: grid;
-        place-items: center;
-        padding: 24px;
-      }
-
-      main {
-        width: min(720px, 100%);
-        padding: 48px 32px;
-        border: 1px solid var(--border);
-        border-radius: 28px;
-        background: var(--panel);
-        backdrop-filter: blur(10px);
-        box-shadow: 0 24px 60px rgba(22, 34, 31, 0.08);
-      }
-
-      p {
-        margin: 0 0 16px;
-        line-height: 1.7;
-        font-size: 1.05rem;
-      }
-
-      .eyebrow {
-        margin-bottom: 12px;
-        color: var(--accent);
-        letter-spacing: 0.12em;
-        font-size: 0.82rem;
-        text-transform: uppercase;
-      }
-
-      h1 {
-        margin: 0 0 20px;
-        font-size: clamp(2.8rem, 8vw, 4.8rem);
-        line-height: 0.95;
-      }
-
-      .links {
-        display: flex;
-        gap: 12px;
-        flex-wrap: wrap;
-        margin-top: 28px;
+          radial-gradient(circle at top left, rgba(184, 91, 52, 0.18), transparent 26%),
+          radial-gradient(circle at 85% 15%, rgba(29, 40, 31, 0.08), transparent 24%),
+          linear-gradient(180deg, #f8f4ec 0%, #f6f1e8 44%, #f3ede2 100%);
       }
 
       a {
         color: inherit;
+      }
+
+      img,
+      svg {
+        display: block;
+        max-width: 100%;
+      }
+
+      ::selection {
+        background: rgba(184, 91, 52, 0.2);
+      }
+
+      .page-shell {
+        position: relative;
+        overflow: clip;
+      }
+
+      .page-shell::before,
+      .page-shell::after {
+        content: "";
+        position: fixed;
+        inset: auto;
+        pointer-events: none;
+        z-index: 0;
+        border-radius: 999px;
+        filter: blur(12px);
+      }
+
+      .page-shell::before {
+        top: 80px;
+        right: -120px;
+        width: 280px;
+        height: 280px;
+        background: rgba(184, 91, 52, 0.08);
+      }
+
+      .page-shell::after {
+        bottom: 120px;
+        left: -100px;
+        width: 220px;
+        height: 220px;
+        background: rgba(29, 40, 31, 0.07);
+      }
+
+      .container {
+        width: min(calc(100% - 40px), var(--max-width));
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+      }
+
+      .site-header {
+        padding: 26px 0 16px;
+      }
+
+      .site-nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: baseline;
+        gap: 12px;
         text-decoration: none;
-        border-bottom: 1px solid currentColor;
-        padding-bottom: 2px;
+      }
+
+      .brand-mark {
+        font-size: 0.8rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--accent);
+      }
+
+      .brand-name {
+        font-family: "Noto Serif TC", serif;
+        font-size: 1.15rem;
+        font-weight: 700;
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        flex-wrap: wrap;
+      }
+
+      .nav-links a {
+        text-decoration: none;
+        color: var(--text-soft);
+        font-size: 0.95rem;
+      }
+
+      .nav-links a:hover,
+      .nav-links a:focus-visible {
+        color: var(--text);
+      }
+
+      .hero {
+        padding: 34px 0 18px;
+      }
+
+      .hero-card {
+        display: grid;
+        grid-template-columns: minmax(0, 1.65fr) minmax(300px, 0.95fr);
+        gap: 28px;
+        align-items: stretch;
+      }
+
+      .hero-main,
+      .hero-aside {
+        background: linear-gradient(180deg, rgba(255, 251, 245, 0.9), rgba(255, 248, 240, 0.7));
+        border: 1px solid var(--line);
+        border-radius: var(--radius-xl);
+        box-shadow: var(--shadow);
+        backdrop-filter: blur(10px);
+      }
+
+      .hero-main {
+        padding: 38px;
+      }
+
+      .eyebrow {
+        margin: 0 0 16px;
+        color: var(--accent);
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+        font-size: 0.78rem;
+        font-weight: 700;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      p {
+        margin: 0;
+      }
+
+      .hero-title {
+        font-family: "Noto Serif TC", serif;
+        font-size: clamp(3rem, 8vw, 6.4rem);
+        line-height: 0.96;
+        letter-spacing: -0.04em;
+      }
+
+      .hero-title .muted {
+        display: block;
+        color: rgba(29, 40, 31, 0.5);
+      }
+
+      .hero-subtitle {
+        margin-top: 22px;
+        max-width: 18em;
+        font-size: clamp(1.15rem, 2vw, 1.45rem);
+        line-height: 1.65;
+        color: var(--text-soft);
+      }
+
+      .hero-support {
+        margin-top: 20px;
+        max-width: 42rem;
+        font-size: 1.02rem;
+        line-height: 1.8;
+        color: var(--text);
+      }
+
+      .hero-actions {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        flex-wrap: wrap;
+        margin-top: 28px;
+      }
+
+      .button,
+      .text-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 999px;
+        text-decoration: none;
+        transition:
+          transform 180ms ease,
+          background-color 180ms ease,
+          border-color 180ms ease,
+          color 180ms ease,
+          opacity 180ms ease;
       }
 
       .button {
-        border: none;
-        border-radius: 999px;
-        background: var(--fg);
-        color: #fffaf2;
-        padding: 12px 18px;
-        transition: transform 160ms ease, opacity 160ms ease;
+        min-height: 50px;
+        padding: 0 20px;
+        border: 1px solid transparent;
+        background: var(--text);
+        color: #fff9f0;
+        font-weight: 700;
+      }
+
+      .button.secondary {
+        background: transparent;
+        color: var(--text);
+        border-color: var(--line-strong);
       }
 
       .button:hover,
-      .button:focus-visible {
+      .button:focus-visible,
+      .text-link:hover,
+      .text-link:focus-visible {
         transform: translateY(-1px);
-        opacity: 0.92;
       }
 
-      @media (max-width: 640px) {
-        main {
-          padding: 36px 22px;
-          border-radius: 22px;
+      .hero-proof {
+        display: grid;
+        gap: 12px;
+        padding: 24px;
+      }
+
+      .hero-aside {
+        padding: 16px;
+      }
+
+      .proof-card {
+        padding: 18px;
+        border-radius: 22px;
+        background: var(--surface-strong);
+        border: 1px solid rgba(29, 40, 31, 0.08);
+      }
+
+      .proof-label {
+        color: var(--text-soft);
+        font-size: 0.82rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+      }
+
+      .proof-value {
+        margin-top: 10px;
+        font-size: clamp(1.6rem, 3vw, 2.3rem);
+        line-height: 1;
+        font-weight: 800;
+      }
+
+      .proof-note {
+        margin-top: 10px;
+        color: var(--text-soft);
+        line-height: 1.65;
+        font-size: 0.96rem;
+      }
+
+      section {
+        padding: 28px 0;
+      }
+
+      .section-head {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(240px, 0.55fr);
+        gap: 20px;
+        align-items: end;
+        margin-bottom: 24px;
+      }
+
+      .section-kicker {
+        color: var(--accent);
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        font-size: 0.76rem;
+        font-weight: 700;
+      }
+
+      .section-title {
+        margin-top: 10px;
+        font-family: "Noto Serif TC", serif;
+        font-size: clamp(2rem, 5vw, 3.3rem);
+        line-height: 1.05;
+      }
+
+      .section-intro {
+        color: var(--text-soft);
+        line-height: 1.8;
+        font-size: 0.98rem;
+      }
+
+      .about-grid,
+      .experience-grid,
+      .ownership-grid {
+        display: grid;
+        gap: 18px;
+      }
+
+      .about-grid {
+        grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+      }
+
+      .panel {
+        background: rgba(255, 251, 245, 0.76);
+        border: 1px solid var(--line);
+        border-radius: var(--radius-lg);
+        padding: 28px;
+      }
+
+      .about-copy p,
+      .timeline-copy p,
+      .contact-copy p {
+        font-size: 1rem;
+        line-height: 1.9;
+      }
+
+      .about-copy p + p,
+      .timeline-copy p + p,
+      .contact-copy p + p {
+        margin-top: 16px;
+      }
+
+      .snapshot-list,
+      .ownership-list,
+      .contact-list {
+        display: grid;
+        gap: 14px;
+      }
+
+      .snapshot-item,
+      .ownership-item,
+      .contact-item {
+        padding: 16px 0;
+        border-top: 1px solid var(--line);
+      }
+
+      .snapshot-item:first-child,
+      .ownership-item:first-child,
+      .contact-item:first-child {
+        border-top: none;
+        padding-top: 0;
+      }
+
+      .item-label {
+        display: block;
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: 6px;
+      }
+
+      .item-body {
+        line-height: 1.8;
+        color: var(--text);
+      }
+
+      .achievements-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .achievement-card {
+        min-height: 100%;
+        display: grid;
+        gap: 14px;
+        padding: 24px;
+        border-radius: var(--radius-lg);
+        border: 1px solid var(--line);
+        background:
+          linear-gradient(180deg, rgba(255, 251, 245, 0.95), rgba(249, 241, 231, 0.82)),
+          var(--surface);
+      }
+
+      .achievement-index {
+        font-size: 0.8rem;
+        font-weight: 800;
+        letter-spacing: 0.14em;
+        color: var(--accent);
+      }
+
+      .achievement-title {
+        font-family: "Noto Serif TC", serif;
+        font-size: 1.5rem;
+        line-height: 1.3;
+      }
+
+      .achievement-copy {
+        color: var(--text-soft);
+        line-height: 1.8;
+      }
+
+      .timeline {
+        display: grid;
+        gap: 18px;
+      }
+
+      .timeline-item {
+        display: grid;
+        grid-template-columns: 160px minmax(0, 1fr);
+        gap: 24px;
+        padding: 28px;
+        border-radius: var(--radius-lg);
+        border: 1px solid var(--line);
+        background: rgba(255, 251, 245, 0.82);
+      }
+
+      .timeline-meta {
+        padding-top: 2px;
+      }
+
+      .timeline-period {
+        color: var(--text-soft);
+        font-size: 0.9rem;
+      }
+
+      .timeline-role {
+        margin-top: 10px;
+        font-family: "Noto Serif TC", serif;
+        font-size: 1.5rem;
+        line-height: 1.35;
+      }
+
+      .timeline-company {
+        margin-top: 6px;
+        color: var(--accent-deep);
+        font-weight: 700;
+      }
+
+      .ownership-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .ownership-item h3 {
+        font-size: 1.15rem;
+        margin-bottom: 10px;
+      }
+
+      .ownership-item p {
+        color: var(--text-soft);
+        line-height: 1.8;
+      }
+
+      .contact-wrap {
+        display: grid;
+        grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.7fr);
+        gap: 18px;
+      }
+
+      .contact-card {
+        background: linear-gradient(180deg, rgba(35, 46, 38, 0.96), rgba(24, 31, 27, 0.96));
+        color: #f7f0e6;
+        border-radius: var(--radius-xl);
+        padding: 32px;
+        box-shadow: var(--shadow);
+      }
+
+      .contact-card .section-kicker,
+      .contact-card .item-label {
+        color: #e5a17d;
+      }
+
+      .contact-card .section-title,
+      .contact-card .contact-copy p,
+      .contact-card .item-body,
+      .contact-card a {
+        color: inherit;
+      }
+
+      .contact-list a {
+        text-decoration: none;
+        border-bottom: 1px solid rgba(247, 240, 230, 0.35);
+        padding-bottom: 2px;
+      }
+
+      .contact-note {
+        color: rgba(247, 240, 230, 0.76);
+      }
+
+      .site-footer {
+        padding: 10px 0 40px;
+      }
+
+      .footer-line {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        padding-top: 18px;
+        border-top: 1px solid var(--line);
+        color: var(--text-soft);
+        font-size: 0.92rem;
+      }
+
+      .fade-up {
+        animation: fadeUp 720ms ease both;
+      }
+
+      .delay-1 {
+        animation-delay: 110ms;
+      }
+
+      .delay-2 {
+        animation-delay: 220ms;
+      }
+
+      .delay-3 {
+        animation-delay: 330ms;
+      }
+
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(22px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      a:focus-visible,
+      button:focus-visible {
+        outline: 3px solid rgba(184, 91, 52, 0.34);
+        outline-offset: 3px;
+      }
+
+      @media (max-width: 960px) {
+        .hero-card,
+        .section-head,
+        .about-grid,
+        .contact-wrap,
+        .timeline-item {
+          grid-template-columns: 1fr;
+        }
+
+        .achievements-grid,
+        .ownership-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-main,
+        .panel,
+        .timeline-item,
+        .contact-card {
+          padding: 24px;
+        }
+      }
+
+      @media (max-width: 720px) {
+        .container {
+          width: min(calc(100% - 24px), var(--max-width));
+        }
+
+        .site-header {
+          padding-top: 18px;
+        }
+
+        .site-nav {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .nav-links {
+          gap: 12px 16px;
+        }
+
+        .hero {
+          padding-top: 18px;
+        }
+
+        .hero-main,
+        .hero-aside,
+        .panel,
+        .achievement-card,
+        .timeline-item,
+        .contact-card {
+          border-radius: 24px;
+        }
+
+        .hero-main {
+          padding: 24px;
+        }
+
+        .hero-proof {
+          padding: 12px;
+        }
+
+        .proof-card {
+          padding: 16px;
+          border-radius: 18px;
+        }
+
+        .button,
+        .button.secondary {
+          width: 100%;
+        }
+
+        .footer-line {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+
+        *,
+        *::before,
+        *::after {
+          animation: none !important;
+          transition: none !important;
         }
       }
     </style>
   </head>
   <body>
-    <main>
-      <p class="eyebrow">Portfolio in Progress</p>
-      <h1>jusuho</h1>
-      <p>這是我的個人網站，接下來會放上作品、經歷與聯絡方式。</p>
-      <p>目前先用這個頁面完成 GitHub Pages 部署，之後可以再逐步擴充成正式的面試用網站。</p>
-      <div class="links">
-        <a class="button" href="https://github.com/jusuho">GitHub</a>
-        <a href="mailto:you@example.com">Email</a>
-      </div>
-    </main>
+    <div class="page-shell">
+      <header class="site-header">
+        <div class="container site-nav">
+          <a class="brand" href="#top">
+            <span class="brand-mark">Engineering Leader</span>
+            <span class="brand-name">趙守浩</span>
+          </a>
+          <nav class="nav-links" aria-label="Primary">
+            <a href="#about">關於我</a>
+            <a href="#achievements">代表成果</a>
+            <a href="#experience">經歷</a>
+            <a href="#contact">聯絡</a>
+          </nav>
+        </div>
+      </header>
+
+      <main id="top">
+        <section class="hero">
+          <div class="container hero-card">
+            <div class="hero-main fade-up">
+              <p class="eyebrow">Head / Director Potential</p>
+              <h1 class="hero-title">
+                趙守浩
+                <span class="muted">Engineering Leader</span>
+              </h1>
+              <p class="hero-subtitle">
+                具 7+ 年軟體、系統整合與交付管理經驗，曾建立並帶領跨職能團隊，推動雲端架構重構、交付流程標準化、行動應用現代化與企業級數位轉型。
+              </p>
+              <p class="hero-support">
+                我專注於把工程團隊、技術架構與商業目標對齊，建立可持續的交付能力，讓系統不只可上線，也能穩定支撐營運成長與組織擴張。
+              </p>
+              <div class="hero-actions">
+                <a class="button" href="#contact">洽談職涯機會</a>
+                <a class="button secondary" href="#achievements">查看代表成果</a>
+              </div>
+            </div>
+
+            <aside class="hero-aside fade-up delay-1" aria-label="Key proof points">
+              <div class="hero-proof">
+                <article class="proof-card">
+                  <div class="proof-label">Team Leadership</div>
+                  <div class="proof-value">6+ 人</div>
+                  <p class="proof-note">從零建立跨職能研發團隊，涵蓋前後端、App 與平台協作。</p>
+                </article>
+                <article class="proof-card">
+                  <div class="proof-label">Cost Impact</div>
+                  <div class="proof-value">-30%</div>
+                  <p class="proof-note">主導雲端架構重構，兼顧可用性、成本與後續擴張性。</p>
+                </article>
+                <article class="proof-card">
+                  <div class="proof-label">Project Scale</div>
+                  <div class="proof-value">NT$5 億+</div>
+                  <p class="proof-note">管理大型系統整合與跨單位協作，累積高金額專案治理經驗。</p>
+                </article>
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <section id="about">
+          <div class="container">
+            <div class="section-head">
+              <div>
+                <div class="section-kicker">About</div>
+                <h2 class="section-title">把模糊需求變成可穩定交付的工程體系</h2>
+              </div>
+              <p class="section-intro">
+                面向高階主管的價值，不是單點技術能力，而是能否在資源有限、需求變動快、跨部門依賴高的環境中建立秩序、節奏與決策品質。
+              </p>
+            </div>
+
+            <div class="about-grid">
+              <article class="panel about-copy fade-up">
+                <p>
+                  我是趙守浩，現任凡易股份有限公司技術負責人，畢業於國立台灣大學資訊工程研究所。過去 7 到 8 年間，我的工作橫跨全端開發、系統整合、專案管理、雲端架構與工程團隊建立。
+                </p>
+                <p>
+                  我不只負責系統開發，也負責把流程、品質、協作、技術決策與治理機制一起建立起來，讓團隊能在有限資源下持續穩定交付，並降低成長階段常見的技術與管理風險。
+                </p>
+                <p>
+                  我擅長將模糊需求轉化為可執行的技術路線、協作機制與交付節奏，同時兼顧短期交付與中長期可擴張性。
+                </p>
+              </article>
+
+              <aside class="panel fade-up delay-1" aria-label="Leadership snapshot">
+                <div class="section-kicker">Leadership Snapshot</div>
+                <div class="snapshot-list">
+                  <div class="snapshot-item">
+                    <span class="item-label">團隊建立與帶領</span>
+                    <div class="item-body">從零建立跨職能研發團隊，建立角色分工、協作界面與穩定交付節奏。</div>
+                  </div>
+                  <div class="snapshot-item">
+                    <span class="item-label">決策範圍</span>
+                    <div class="item-body">技術選型、架構演進、交付流程、品質標準、資訊安全與內部治理。</div>
+                  </div>
+                  <div class="snapshot-item">
+                    <span class="item-label">協作範圍</span>
+                    <div class="item-body">與產品、營運、客戶、供應商及跨部門利害關係人協調目標與優先序。</div>
+                  </div>
+                  <div class="snapshot-item">
+                    <span class="item-label">管理特質</span>
+                    <div class="item-body">能在速度、品質、成本與風險之間做務實取捨，建立可持續的運作方式。</div>
+                  </div>
+                </div>
+              </aside>
+            </div>
+          </div>
+        </section>
+
+        <section id="achievements">
+          <div class="container">
+            <div class="section-head">
+              <div>
+                <div class="section-kicker">Selected Achievements</div>
+                <h2 class="section-title">不是任務清單，而是可被信任的經營結果</h2>
+              </div>
+              <p class="section-intro">
+                這些成果聚焦在高階主管真正關心的面向：團隊能力、成本效率、交付穩定性、營運支撐與大型專案治理。
+              </p>
+            </div>
+
+            <div class="achievements-grid">
+              <article class="achievement-card fade-up">
+                <div class="achievement-index">01</div>
+                <h3 class="achievement-title">建立跨職能研發團隊</h3>
+                <p class="achievement-copy">
+                  從零建立並帶領 6+ 人跨職能團隊，導入 Scrum 與穩定交付節奏，支撐企業級日照資訊系統中台與雙平台 App 開發。
+                </p>
+              </article>
+
+              <article class="achievement-card fade-up delay-1">
+                <div class="achievement-index">02</div>
+                <h3 class="achievement-title">主導雲端架構重構</h3>
+                <p class="achievement-copy">
+                  推動由傳統單體系統轉向 GCP 雲端架構，平衡成本、可用性與後續擴張性，最終降低約 30% 運行成本並提升系統韌性。
+                </p>
+              </article>
+
+              <article class="achievement-card fade-up delay-2">
+                <div class="achievement-index">03</div>
+                <h3 class="achievement-title">建立 CI/CD 與工程標準化</h3>
+                <p class="achievement-copy">
+                  以 GitHub Actions 取代人工部署，將發布流程從 30 分鐘縮短至 10 分鐘內，降低人工作業風險，支援更穩定的高頻交付。
+                </p>
+              </article>
+
+              <article class="achievement-card fade-up delay-3">
+                <div class="achievement-index">04</div>
+                <h3 class="achievement-title">管理大型專案與跨單位協作</h3>
+                <p class="achievement-copy">
+                  於中華電信負責大型系統整合、機房建置、供應商管理、時程與預算控管，累積經手專案金額逾新台幣 5 億元。
+                </p>
+              </article>
+
+              <article class="achievement-card fade-up">
+                <div class="achievement-index">05</div>
+                <h3 class="achievement-title">整合 IoT、BLE 與 OCR 應用</h3>
+                <p class="achievement-copy">
+                  將醫療量測設備資料自動串接至照護流程，並以 Python 與 OCR 自動化資料處理，降低人工輸入成本與錯誤率，提升第一線營運效率。
+                </p>
+              </article>
+
+              <article class="achievement-card fade-up delay-1">
+                <div class="achievement-index">06</div>
+                <h3 class="achievement-title">推動 AI 協作開發流程</h3>
+                <p class="achievement-copy">
+                  將 AI 導入程式生成、重構與測試撰寫流程，提升團隊開發槓桿與交付效率，強化有限人力下的產出能力。
+                </p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section id="experience">
+          <div class="container">
+            <div class="section-head">
+              <div>
+                <div class="section-kicker">Experience</div>
+                <h2 class="section-title">兼具產品節奏、治理能力與大型專案視角</h2>
+              </div>
+              <p class="section-intro">
+                兩段經歷共同形成我的管理底盤：一段面向成長中的產品與工程體系建立，一段面向高可靠度、合規與跨組織協調。
+              </p>
+            </div>
+
+            <div class="timeline">
+              <article class="timeline-item fade-up">
+                <div class="timeline-meta">
+                  <div class="timeline-period">現職</div>
+                  <h3 class="timeline-role">Technical Lead / 技術負責人</h3>
+                  <div class="timeline-company">凡易股份有限公司 FanEasy</div>
+                </div>
+                <div class="timeline-copy">
+                  <p>
+                    在凡易，我負責的不只是開發，而是整體技術與交付能力的建立。工作涵蓋產品中台、行動應用、雲端部署、團隊流程、資訊安全與內部 IT 治理。
+                  </p>
+                  <p>
+                    近年的重點不是單一功能開發，而是建立能持續支撐產品成長的工程體系，包括 App 現代化、雲端架構演進、交付標準化、IoT/BLE 整合、OCR 自動化與金流系統落地。
+                  </p>
+                </div>
+              </article>
+
+              <article class="timeline-item fade-up delay-1">
+                <div class="timeline-meta">
+                  <div class="timeline-period">前一階段</div>
+                  <h3 class="timeline-role">Project / Systems Integration Roles</h3>
+                  <div class="timeline-company">中華電信 Chunghwa Telecom</div>
+                </div>
+                <div class="timeline-copy">
+                  <p>
+                    在中華電信期間，我累積了大型專案管理與企業系統整合經驗，負責需求協調、廠商管理、時程與預算控管，以及客製化系統的設計、開發與維運。
+                  </p>
+                  <p>
+                    這段經歷建立了我對高可靠性、合規要求、跨組織協調與高金額專案治理的實務基礎，也讓我更能理解企業決策的風險與現實限制。
+                  </p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section id="scope">
+          <div class="container">
+            <div class="section-head">
+              <div>
+                <div class="section-kicker">What I Lead</div>
+                <h2 class="section-title">我能負責的不只是技術，而是工程運作本身</h2>
+              </div>
+              <p class="section-intro">
+                這一段不做關鍵字雲，而是明確說明我可以承接哪些管理範圍，讓職缺與責任邊界更容易對齊。
+              </p>
+            </div>
+
+            <div class="ownership-grid">
+              <article class="panel ownership-item fade-up">
+                <h3>Engineering Leadership</h3>
+                <p>團隊建立、角色分工、Scrum、跨職能協作、Code Review 與交付流程設計。</p>
+              </article>
+              <article class="panel ownership-item fade-up delay-1">
+                <h3>Architecture &amp; Platform</h3>
+                <p>GCP、GKE、Cloud Run、Cloud SQL、架構演進、微服務化、CI/CD 與 Monorepo 管理。</p>
+              </article>
+              <article class="panel ownership-item fade-up delay-2">
+                <h3>Business &amp; Delivery Alignment</h3>
+                <p>需求釐清、優先序協調、跨部門溝通、供應商協作、交付節奏與風險管理。</p>
+              </article>
+              <article class="panel ownership-item fade-up delay-3">
+                <h3>Governance &amp; Operations</h3>
+                <p>ISO 27001、個資保護、Microsoft 365 導入、IT 基礎建設與權限治理。</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section id="contact">
+          <div class="container contact-wrap">
+            <article class="contact-card fade-up">
+              <div class="section-kicker">Contact</div>
+              <h2 class="section-title">適合正在擴張、現代化或補強管理中層的工程團隊</h2>
+              <div class="contact-copy">
+                <p>
+                  如果你正在尋找能夠帶團隊、建立交付機制、推動架構演進，並把技術真正落到營運成果上的工程主管或技術負責人，歡迎與我聯絡。
+                </p>
+                <p class="contact-note">
+                  可洽談 Engineering Manager、Technical Lead、Head of Engineering track 等職務機會。
+                </p>
+              </div>
+            </article>
+
+            <aside class="panel fade-up delay-1" aria-label="Contact methods">
+              <div class="section-kicker">Reach Out</div>
+              <div class="contact-list">
+                <div class="contact-item">
+                  <span class="item-label">Email</span>
+                  <div class="item-body"><a href="mailto:you@example.com">you@example.com</a></div>
+                </div>
+                <div class="contact-item">
+                  <span class="item-label">GitHub</span>
+                  <div class="item-body"><a href="https://github.com/jusuho" target="_blank" rel="noreferrer">github.com/jusuho</a></div>
+                </div>
+                <div class="contact-item">
+                  <span class="item-label">LinkedIn</span>
+                  <div class="item-body">可補上正式個人頁連結</div>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="container footer-line">
+          <span>© 2026 趙守浩</span>
+          <span>Engineering Leader focused on delivery systems, architecture, and business alignment.</span>
+        </div>
+      </footer>
+    </div>
   </body>
 </html>
