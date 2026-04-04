@@ -6,8 +6,26 @@
     <title>趙守浩 | Engineering Leader</title>
     <meta
       name="description"
-      content="趙守浩的個人網站。聚焦工程團隊建立、架構現代化、交付流程標準化與營運導向的技術管理。"
+      content="趙守浩的個人網站。聚焦工程團隊建立、AI 協作開發、架構現代化、交付流程標準化與營運導向的技術管理。"
     />
+    <meta name="theme-color" content="#1d281f" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="趙守浩 | Engineering Leader" />
+    <meta
+      property="og:description"
+      content="聚焦工程團隊建立、AI 協作開發、架構現代化、交付流程標準化與營運導向的技術管理。"
+    />
+    <meta property="og:url" content="https://jusuho.github.io/" />
+    <meta property="og:image" content="https://jusuho.github.io/og-preview.svg" />
+    <meta property="og:locale" content="zh_TW" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="趙守浩 | Engineering Leader" />
+    <meta
+      name="twitter:description"
+      content="聚焦工程團隊建立、AI 協作開發、架構現代化、交付流程標準化與營運導向的技術管理。"
+    />
+    <meta name="twitter:image" content="https://jusuho.github.io/og-preview.svg" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -18,20 +36,18 @@
       :root {
         color-scheme: light;
         --bg: #f6f1e8;
-        --bg-strong: #efe4d4;
-        --surface: rgba(255, 250, 243, 0.8);
+        --surface: rgba(255, 250, 243, 0.84);
         --surface-strong: #fffaf3;
         --text: #1d281f;
         --text-soft: #4a584e;
         --line: rgba(29, 40, 31, 0.12);
-        --line-strong: rgba(29, 40, 31, 0.24);
+        --line-strong: rgba(29, 40, 31, 0.22);
         --accent: #b85b34;
         --accent-deep: #7f3b1f;
         --shadow: 0 30px 90px rgba(33, 31, 24, 0.1);
-        --radius-xl: 32px;
+        --radius-xl: 34px;
         --radius-lg: 24px;
-        --radius-md: 18px;
-        --max-width: 1180px;
+        --max-width: 1220px;
       }
 
       * {
@@ -49,18 +65,12 @@
         color: var(--text);
         background:
           radial-gradient(circle at top left, rgba(184, 91, 52, 0.18), transparent 26%),
-          radial-gradient(circle at 85% 15%, rgba(29, 40, 31, 0.08), transparent 24%),
+          radial-gradient(circle at 82% 12%, rgba(29, 40, 31, 0.08), transparent 24%),
           linear-gradient(180deg, #f8f4ec 0%, #f6f1e8 44%, #f3ede2 100%);
       }
 
       a {
         color: inherit;
-      }
-
-      img,
-      svg {
-        display: block;
-        max-width: 100%;
       }
 
       ::selection {
@@ -76,7 +86,6 @@
       .page-shell::after {
         content: "";
         position: fixed;
-        inset: auto;
         pointer-events: none;
         z-index: 0;
         border-radius: 999px;
@@ -84,7 +93,7 @@
       }
 
       .page-shell::before {
-        top: 80px;
+        top: 70px;
         right: -120px;
         width: 280px;
         height: 280px;
@@ -100,14 +109,14 @@
       }
 
       .container {
-        width: min(calc(100% - 40px), var(--max-width));
+        width: min(calc(100% - 56px), var(--max-width));
         margin: 0 auto;
         position: relative;
         z-index: 1;
       }
 
       .site-header {
-        padding: 26px 0 16px;
+        padding: 30px 0 22px;
       }
 
       .site-nav {
@@ -155,73 +164,92 @@
         color: var(--text);
       }
 
+      section {
+        padding: 44px 0;
+      }
+
       .hero {
-        padding: 34px 0 18px;
+        padding: 44px 0 36px;
       }
 
       .hero-card {
         display: grid;
-        grid-template-columns: minmax(0, 1.65fr) minmax(300px, 0.95fr);
-        gap: 28px;
+        grid-template-columns: minmax(0, 1.6fr) minmax(320px, 0.92fr);
+        gap: 32px;
         align-items: stretch;
       }
 
       .hero-main,
-      .hero-aside {
-        background: linear-gradient(180deg, rgba(255, 251, 245, 0.9), rgba(255, 248, 240, 0.7));
+      .hero-aside,
+      .panel,
+      .achievement-card,
+      .timeline-item,
+      .contact-card {
         border: 1px solid var(--line);
         border-radius: var(--radius-xl);
         box-shadow: var(--shadow);
         backdrop-filter: blur(10px);
       }
 
-      .hero-main {
-        padding: 38px;
+      .hero-main,
+      .hero-aside,
+      .panel,
+      .achievement-card,
+      .timeline-item {
+        background: linear-gradient(180deg, rgba(255, 251, 245, 0.95), rgba(250, 244, 235, 0.78));
       }
 
-      .eyebrow {
-        margin: 0 0 16px;
-        color: var(--accent);
+      .hero-main {
+        padding: 48px;
+      }
+
+      .hero-aside {
+        padding: 20px;
+      }
+
+      .eyebrow,
+      .section-kicker,
+      .item-label,
+      .achievement-index {
         text-transform: uppercase;
-        letter-spacing: 0.16em;
+        letter-spacing: 0.14em;
         font-size: 0.78rem;
         font-weight: 700;
+        color: var(--accent);
       }
 
       h1,
       h2,
       h3,
-      h4,
       p {
         margin: 0;
       }
 
       .hero-title {
         font-family: "Noto Serif TC", serif;
-        font-size: clamp(3rem, 8vw, 6.4rem);
+        font-size: clamp(3rem, 8vw, 6.3rem);
         line-height: 0.96;
         letter-spacing: -0.04em;
       }
 
       .hero-title .muted {
         display: block;
-        color: rgba(29, 40, 31, 0.5);
+        color: rgba(29, 40, 31, 0.54);
       }
 
       .hero-subtitle {
-        margin-top: 22px;
-        max-width: 18em;
-        font-size: clamp(1.15rem, 2vw, 1.45rem);
-        line-height: 1.65;
+        margin-top: 24px;
+        max-width: 20em;
+        font-size: clamp(1.12rem, 2vw, 1.44rem);
+        line-height: 1.68;
         color: var(--text-soft);
       }
 
       .hero-support {
-        margin-top: 20px;
-        max-width: 42rem;
+        margin-top: 24px;
+        max-width: 45rem;
         font-size: 1.02rem;
-        line-height: 1.8;
-        color: var(--text);
+        line-height: 1.85;
       }
 
       .hero-actions {
@@ -229,31 +257,26 @@
         align-items: center;
         gap: 14px;
         flex-wrap: wrap;
-        margin-top: 28px;
-      }
-
-      .button,
-      .text-link {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 999px;
-        text-decoration: none;
-        transition:
-          transform 180ms ease,
-          background-color 180ms ease,
-          border-color 180ms ease,
-          color 180ms ease,
-          opacity 180ms ease;
+        margin-top: 34px;
       }
 
       .button {
-        min-height: 50px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 52px;
         padding: 0 20px;
+        border-radius: 999px;
+        text-decoration: none;
         border: 1px solid transparent;
         background: var(--text);
         color: #fff9f0;
         font-weight: 700;
+        transition:
+          transform 180ms ease,
+          background-color 180ms ease,
+          border-color 180ms ease,
+          color 180ms ease;
       }
 
       .button.secondary {
@@ -263,24 +286,60 @@
       }
 
       .button:hover,
-      .button:focus-visible,
-      .text-link:hover,
-      .text-link:focus-visible {
+      .button:focus-visible {
         transform: translateY(-1px);
       }
 
       .hero-proof {
         display: grid;
-        gap: 12px;
-        padding: 24px;
+        gap: 14px;
+        padding: 8px;
       }
 
-      .hero-aside {
-        padding: 16px;
+      .profile-card {
+        display: grid;
+        gap: 14px;
+        padding: 18px;
+        border-radius: 24px;
+        background: rgba(255, 250, 243, 0.78);
+        border: 1px solid rgba(29, 40, 31, 0.08);
+      }
+
+      .profile-photo {
+        aspect-ratio: 4 / 5;
+        width: 100%;
+        border-radius: 20px;
+        overflow: hidden;
+        background:
+          linear-gradient(180deg, rgba(29, 40, 31, 0.08), rgba(184, 91, 52, 0.12)),
+          #ede4d7;
+      }
+
+      .profile-photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .profile-photo-placeholder {
+        display: grid;
+        place-items: center;
+        width: 100%;
+        height: 100%;
+        padding: 24px;
+        text-align: center;
+        color: var(--text-soft);
+        line-height: 1.8;
+      }
+
+      .profile-caption {
+        color: var(--text-soft);
+        line-height: 1.75;
+        font-size: 0.95rem;
       }
 
       .proof-card {
-        padding: 18px;
+        padding: 22px;
         border-radius: 22px;
         background: var(--surface-strong);
         border: 1px solid rgba(29, 40, 31, 0.08);
@@ -295,7 +354,7 @@
 
       .proof-value {
         margin-top: 10px;
-        font-size: clamp(1.6rem, 3vw, 2.3rem);
+        font-size: clamp(1.6rem, 3vw, 2.2rem);
         line-height: 1;
         font-weight: 800;
       }
@@ -303,59 +362,48 @@
       .proof-note {
         margin-top: 10px;
         color: var(--text-soft);
-        line-height: 1.65;
+        line-height: 1.7;
         font-size: 0.96rem;
-      }
-
-      section {
-        padding: 28px 0;
       }
 
       .section-head {
         display: grid;
-        grid-template-columns: minmax(0, 1fr) minmax(240px, 0.55fr);
-        gap: 20px;
+        grid-template-columns: minmax(0, 1fr) minmax(260px, 0.56fr);
+        gap: 28px;
         align-items: end;
-        margin-bottom: 24px;
-      }
-
-      .section-kicker {
-        color: var(--accent);
-        text-transform: uppercase;
-        letter-spacing: 0.14em;
-        font-size: 0.76rem;
-        font-weight: 700;
+        margin-bottom: 30px;
       }
 
       .section-title {
         margin-top: 10px;
         font-family: "Noto Serif TC", serif;
-        font-size: clamp(2rem, 5vw, 3.3rem);
-        line-height: 1.05;
+        font-size: clamp(2rem, 4.8vw, 3.25rem);
+        line-height: 1.08;
       }
 
       .section-intro {
         color: var(--text-soft);
-        line-height: 1.8;
+        line-height: 1.85;
         font-size: 0.98rem;
       }
 
       .about-grid,
-      .experience-grid,
-      .ownership-grid {
+      .achievements-grid,
+      .timeline,
+      .ownership-grid,
+      .contact-wrap,
+      .snapshot-list,
+      .contact-list {
         display: grid;
-        gap: 18px;
+        gap: 22px;
       }
 
       .about-grid {
-        grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+        grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr);
       }
 
       .panel {
-        background: rgba(255, 251, 245, 0.76);
-        border: 1px solid var(--line);
-        border-radius: var(--radius-lg);
-        padding: 28px;
+        padding: 34px;
       }
 
       .about-copy p,
@@ -371,95 +419,53 @@
         margin-top: 16px;
       }
 
-      .snapshot-list,
-      .ownership-list,
-      .contact-list {
-        display: grid;
-        gap: 14px;
-      }
-
       .snapshot-item,
-      .ownership-item,
       .contact-item {
-        padding: 16px 0;
+        padding-top: 16px;
         border-top: 1px solid var(--line);
       }
 
       .snapshot-item:first-child,
-      .ownership-item:first-child,
       .contact-item:first-child {
-        border-top: none;
         padding-top: 0;
+        border-top: none;
       }
 
       .item-label {
         display: block;
-        font-size: 0.8rem;
-        font-weight: 700;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        color: var(--accent);
-        margin-bottom: 6px;
+        margin-bottom: 8px;
       }
 
       .item-body {
-        line-height: 1.8;
-        color: var(--text);
+        line-height: 1.85;
       }
 
       .achievements-grid {
-        display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 18px;
       }
 
       .achievement-card {
-        min-height: 100%;
         display: grid;
         gap: 14px;
-        padding: 24px;
-        border-radius: var(--radius-lg);
-        border: 1px solid var(--line);
-        background:
-          linear-gradient(180deg, rgba(255, 251, 245, 0.95), rgba(249, 241, 231, 0.82)),
-          var(--surface);
-      }
-
-      .achievement-index {
-        font-size: 0.8rem;
-        font-weight: 800;
-        letter-spacing: 0.14em;
-        color: var(--accent);
+        padding: 30px;
       }
 
       .achievement-title {
         font-family: "Noto Serif TC", serif;
-        font-size: 1.5rem;
-        line-height: 1.3;
+        font-size: 1.45rem;
+        line-height: 1.34;
       }
 
       .achievement-copy {
         color: var(--text-soft);
-        line-height: 1.8;
-      }
-
-      .timeline {
-        display: grid;
-        gap: 18px;
+        line-height: 1.85;
       }
 
       .timeline-item {
         display: grid;
-        grid-template-columns: 160px minmax(0, 1fr);
-        gap: 24px;
-        padding: 28px;
-        border-radius: var(--radius-lg);
-        border: 1px solid var(--line);
-        background: rgba(255, 251, 245, 0.82);
-      }
-
-      .timeline-meta {
-        padding-top: 2px;
+        grid-template-columns: 170px minmax(0, 1fr);
+        gap: 28px;
+        padding: 34px;
       }
 
       .timeline-period {
@@ -470,7 +476,7 @@
       .timeline-role {
         margin-top: 10px;
         font-family: "Noto Serif TC", serif;
-        font-size: 1.5rem;
+        font-size: 1.48rem;
         line-height: 1.35;
       }
 
@@ -484,54 +490,48 @@
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
-      .ownership-item h3 {
+      .ownership-card h3 {
         font-size: 1.15rem;
-        margin-bottom: 10px;
+        margin: 0 0 10px;
       }
 
-      .ownership-item p {
+      .ownership-card p {
+        margin: 0;
         color: var(--text-soft);
-        line-height: 1.8;
+        line-height: 1.85;
       }
 
       .contact-wrap {
-        display: grid;
-        grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.7fr);
-        gap: 18px;
+        grid-template-columns: minmax(0, 1.08fr) minmax(300px, 0.72fr);
       }
 
       .contact-card {
         background: linear-gradient(180deg, rgba(35, 46, 38, 0.96), rgba(24, 31, 27, 0.96));
         color: #f7f0e6;
-        border-radius: var(--radius-xl);
-        padding: 32px;
-        box-shadow: var(--shadow);
+        padding: 38px;
       }
 
       .contact-card .section-kicker,
       .contact-card .item-label {
-        color: #e5a17d;
+        color: #e6ab82;
       }
 
-      .contact-card .section-title,
-      .contact-card .contact-copy p,
-      .contact-card .item-body,
-      .contact-card a {
-        color: inherit;
+      .contact-note {
+        color: rgba(247, 240, 230, 0.78);
+      }
+
+      .contact-links {
+        padding: 34px;
       }
 
       .contact-list a {
         text-decoration: none;
-        border-bottom: 1px solid rgba(247, 240, 230, 0.35);
+        border-bottom: 1px solid rgba(29, 40, 31, 0.22);
         padding-bottom: 2px;
       }
 
-      .contact-note {
-        color: rgba(247, 240, 230, 0.76);
-      }
-
       .site-footer {
-        padding: 10px 0 40px;
+        padding: 24px 0 48px;
       }
 
       .footer-line {
@@ -539,7 +539,7 @@
         align-items: center;
         justify-content: space-between;
         gap: 16px;
-        padding-top: 18px;
+        padding-top: 20px;
         border-top: 1px solid var(--line);
         color: var(--text-soft);
         font-size: 0.92rem;
@@ -579,7 +579,7 @@
         outline-offset: 3px;
       }
 
-      @media (max-width: 960px) {
+      @media (max-width: 980px) {
         .hero-card,
         .section-head,
         .about-grid,
@@ -595,19 +595,21 @@
 
         .hero-main,
         .panel,
+        .achievement-card,
         .timeline-item,
-        .contact-card {
-          padding: 24px;
+        .contact-card,
+        .contact-links {
+          padding: 28px;
         }
       }
 
       @media (max-width: 720px) {
         .container {
-          width: min(calc(100% - 24px), var(--max-width));
+          width: min(calc(100% - 28px), var(--max-width));
         }
 
         .site-header {
-          padding-top: 18px;
+          padding: 20px 0 16px;
         }
 
         .site-nav {
@@ -615,12 +617,12 @@
           flex-direction: column;
         }
 
-        .nav-links {
-          gap: 12px 16px;
+        section {
+          padding: 34px 0;
         }
 
         .hero {
-          padding-top: 18px;
+          padding: 24px 0 30px;
         }
 
         .hero-main,
@@ -629,24 +631,18 @@
         .achievement-card,
         .timeline-item,
         .contact-card {
-          border-radius: 24px;
-        }
-
-        .hero-main {
-          padding: 24px;
+          border-radius: 26px;
         }
 
         .hero-proof {
-          padding: 12px;
+          padding: 4px;
         }
 
         .proof-card {
-          padding: 16px;
-          border-radius: 18px;
+          padding: 18px;
         }
 
-        .button,
-        .button.secondary {
+        .button {
           width: 100%;
         }
 
@@ -697,10 +693,10 @@
                 <span class="muted">Engineering Leader</span>
               </h1>
               <p class="hero-subtitle">
-                具 7+ 年軟體、系統整合與交付管理經驗，曾建立並帶領跨職能團隊，推動雲端架構重構、交付流程標準化、行動應用現代化與企業級數位轉型。
+                具 7+ 年軟體、系統整合與交付管理經驗，曾建立並帶領跨職能團隊，推動 AI 協作開發、雲端架構重構、交付流程標準化與企業級數位轉型。
               </p>
               <p class="hero-support">
-                我專注於把工程團隊、技術架構與商業目標對齊，建立可持續的交付能力，讓系統不只可上線，也能穩定支撐營運成長與組織擴張。
+                我專注於把工程團隊、AI 能力、技術架構與商業目標對齊，建立可持續的交付能力，讓系統不只可上線，也能穩定支撐營運成長、流程升級與組織擴張。
               </p>
               <div class="hero-actions">
                 <a class="button" href="#contact">洽談職涯機會</a>
@@ -710,6 +706,14 @@
 
             <aside class="hero-aside fade-up delay-1" aria-label="Key proof points">
               <div class="hero-proof">
+                <article class="profile-card">
+                  <div class="profile-photo">
+                    <img src="assets/profile.png" alt="趙守浩個人形象照" />
+                  </div>
+                  <p class="profile-caption">
+                    正式商務形象照可補強可信度與記憶點，適合放在首頁第一屏作為管理職個人品牌的信任訊號。
+                  </p>
+                </article>
                 <article class="proof-card">
                   <div class="proof-label">Team Leadership</div>
                   <div class="proof-value">6+ 人</div>
@@ -725,6 +729,11 @@
                   <div class="proof-value">NT$5 億+</div>
                   <p class="proof-note">管理大型系統整合與跨單位協作，累積高金額專案治理經驗。</p>
                 </article>
+                <article class="proof-card">
+                  <div class="proof-label">AI Adoption</div>
+                  <div class="proof-value">Workflow</div>
+                  <p class="proof-note">將 AI 納入程式生成、重構、測試與知識轉譯流程，提升交付槓桿。</p>
+                </article>
               </div>
             </aside>
           </div>
@@ -735,10 +744,10 @@
             <div class="section-head">
               <div>
                 <div class="section-kicker">About</div>
-                <h2 class="section-title">把模糊需求變成可穩定交付的工程體系</h2>
+                <h2 class="section-title">把模糊需求、AI 工具與跨部門壓力，轉成可穩定交付的工程體系</h2>
               </div>
               <p class="section-intro">
-                面向高階主管的價值，不是單點技術能力，而是能否在資源有限、需求變動快、跨部門依賴高的環境中建立秩序、節奏與決策品質。
+                面向高階主管的價值，不是單點技術能力，而是能否在資源有限、需求變動快、跨部門依賴高的環境中建立秩序、節奏與決策品質，並把新技術轉成實際產能。
               </p>
             </div>
 
@@ -753,6 +762,9 @@
                 <p>
                   我擅長將模糊需求轉化為可執行的技術路線、協作機制與交付節奏，同時兼顧短期交付與中長期可擴張性。
                 </p>
+                <p>
+                  近年我也持續把 AI 納入團隊日常開發流程，讓程式生成、重構、測試與知識傳遞更具槓桿，不把 AI 當話題，而是當成提升交付品質與速度的實用管理工具。
+                </p>
               </article>
 
               <aside class="panel fade-up delay-1" aria-label="Leadership snapshot">
@@ -764,7 +776,7 @@
                   </div>
                   <div class="snapshot-item">
                     <span class="item-label">決策範圍</span>
-                    <div class="item-body">技術選型、架構演進、交付流程、品質標準、資訊安全與內部治理。</div>
+                    <div class="item-body">技術選型、架構演進、AI 協作流程、交付流程、品質標準、資訊安全與內部治理。</div>
                   </div>
                   <div class="snapshot-item">
                     <span class="item-label">協作範圍</span>
@@ -785,10 +797,10 @@
             <div class="section-head">
               <div>
                 <div class="section-kicker">Selected Achievements</div>
-                <h2 class="section-title">不是任務清單，而是可被信任的經營結果</h2>
+                <h2 class="section-title">不是任務清單，而是能說服管理層的經營結果</h2>
               </div>
               <p class="section-intro">
-                這些成果聚焦在高階主管真正關心的面向：團隊能力、成本效率、交付穩定性、營運支撐與大型專案治理。
+                這些成果聚焦在高階主管真正關心的面向：團隊能力、AI 生產力、成本效率、交付穩定性、營運支撐與大型專案治理。
               </p>
             </div>
 
@@ -835,9 +847,9 @@
 
               <article class="achievement-card fade-up delay-1">
                 <div class="achievement-index">06</div>
-                <h3 class="achievement-title">推動 AI 協作開發流程</h3>
+                <h3 class="achievement-title">推動 AI 協作開發與工程知識槓桿</h3>
                 <p class="achievement-copy">
-                  將 AI 導入程式生成、重構與測試撰寫流程，提升團隊開發槓桿與交付效率，強化有限人力下的產出能力。
+                  將 AI 導入程式生成、重構、測試撰寫與知識轉譯流程，提升團隊開發槓桿與交付效率，強化有限人力下的產出能力。
                 </p>
               </article>
             </div>
@@ -849,7 +861,7 @@
             <div class="section-head">
               <div>
                 <div class="section-kicker">Experience</div>
-                <h2 class="section-title">兼具產品節奏、治理能力與大型專案視角</h2>
+                <h2 class="section-title">兼具產品節奏、AI 導入能力、治理能力與大型專案視角</h2>
               </div>
               <p class="section-intro">
                 兩段經歷共同形成我的管理底盤：一段面向成長中的產品與工程體系建立，一段面向高可靠度、合規與跨組織協調。
@@ -858,7 +870,7 @@
 
             <div class="timeline">
               <article class="timeline-item fade-up">
-                <div class="timeline-meta">
+                <div>
                   <div class="timeline-period">現職</div>
                   <h3 class="timeline-role">Technical Lead / 技術負責人</h3>
                   <div class="timeline-company">凡易股份有限公司 FanEasy</div>
@@ -868,13 +880,13 @@
                     在凡易，我負責的不只是開發，而是整體技術與交付能力的建立。工作涵蓋產品中台、行動應用、雲端部署、團隊流程、資訊安全與內部 IT 治理。
                   </p>
                   <p>
-                    近年的重點不是單一功能開發，而是建立能持續支撐產品成長的工程體系，包括 App 現代化、雲端架構演進、交付標準化、IoT/BLE 整合、OCR 自動化與金流系統落地。
+                    近年的重點不是單一功能開發，而是建立能持續支撐產品成長的工程體系，包括 App 現代化、雲端架構演進、交付標準化、AI 協作開發、IoT/BLE 整合、OCR 自動化與金流系統落地。
                   </p>
                 </div>
               </article>
 
               <article class="timeline-item fade-up delay-1">
-                <div class="timeline-meta">
+                <div>
                   <div class="timeline-period">前一階段</div>
                   <h3 class="timeline-role">Project / Systems Integration Roles</h3>
                   <div class="timeline-company">中華電信 Chunghwa Telecom</div>
@@ -897,7 +909,7 @@
             <div class="section-head">
               <div>
                 <div class="section-kicker">What I Lead</div>
-                <h2 class="section-title">我能負責的不只是技術，而是工程運作本身</h2>
+                <h2 class="section-title">我能負責的不只是技術，而是工程運作、AI 落地與交付系統本身</h2>
               </div>
               <p class="section-intro">
                 這一段不做關鍵字雲，而是明確說明我可以承接哪些管理範圍，讓職缺與責任邊界更容易對齊。
@@ -905,19 +917,23 @@
             </div>
 
             <div class="ownership-grid">
-              <article class="panel ownership-item fade-up">
+              <article class="panel ownership-card fade-up">
                 <h3>Engineering Leadership</h3>
                 <p>團隊建立、角色分工、Scrum、跨職能協作、Code Review 與交付流程設計。</p>
               </article>
-              <article class="panel ownership-item fade-up delay-1">
+              <article class="panel ownership-card fade-up delay-1">
                 <h3>Architecture &amp; Platform</h3>
                 <p>GCP、GKE、Cloud Run、Cloud SQL、架構演進、微服務化、CI/CD 與 Monorepo 管理。</p>
               </article>
-              <article class="panel ownership-item fade-up delay-2">
+              <article class="panel ownership-card fade-up delay-2">
+                <h3>AI-Enabled Delivery</h3>
+                <p>AI 協作開發流程設計、程式生成與重構應用、測試撰寫輔助、知識轉譯與團隊產能槓桿。</p>
+              </article>
+              <article class="panel ownership-card fade-up delay-3">
                 <h3>Business &amp; Delivery Alignment</h3>
                 <p>需求釐清、優先序協調、跨部門溝通、供應商協作、交付節奏與風險管理。</p>
               </article>
-              <article class="panel ownership-item fade-up delay-3">
+              <article class="panel ownership-card fade-up">
                 <h3>Governance &amp; Operations</h3>
                 <p>ISO 27001、個資保護、Microsoft 365 導入、IT 基礎建設與權限治理。</p>
               </article>
@@ -932,7 +948,7 @@
               <h2 class="section-title">適合正在擴張、現代化或補強管理中層的工程團隊</h2>
               <div class="contact-copy">
                 <p>
-                  如果你正在尋找能夠帶團隊、建立交付機制、推動架構演進，並把技術真正落到營運成果上的工程主管或技術負責人，歡迎與我聯絡。
+                  如果你正在尋找能夠帶團隊、建立交付機制、推動架構演進、導入 AI 協作開發，並把技術真正落到營運成果上的工程主管或技術負責人，歡迎與我聯絡。
                 </p>
                 <p class="contact-note">
                   可洽談 Engineering Manager、Technical Lead、Head of Engineering track 等職務機會。
@@ -940,20 +956,28 @@
               </div>
             </article>
 
-            <aside class="panel fade-up delay-1" aria-label="Contact methods">
+            <aside class="panel contact-links fade-up delay-1" aria-label="Contact methods">
               <div class="section-kicker">Reach Out</div>
               <div class="contact-list">
                 <div class="contact-item">
                   <span class="item-label">Email</span>
-                  <div class="item-body"><a href="mailto:you@example.com">you@example.com</a></div>
+                  <div class="item-body">
+                    <a href="mailto:j5201314peter@gmail.com">j5201314peter@gmail.com</a>
+                  </div>
                 </div>
                 <div class="contact-item">
                   <span class="item-label">GitHub</span>
-                  <div class="item-body"><a href="https://github.com/jusuho" target="_blank" rel="noreferrer">github.com/jusuho</a></div>
+                  <div class="item-body">
+                    <a href="https://github.com/jusuho" target="_blank" rel="noreferrer">github.com/jusuho</a>
+                  </div>
                 </div>
                 <div class="contact-item">
                   <span class="item-label">LinkedIn</span>
-                  <div class="item-body">可補上正式個人頁連結</div>
+                  <div class="item-body">
+                    <a href="https://www.linkedin.com/in/shou-hao-zhao-a4987b111/" target="_blank" rel="noreferrer">
+                      linkedin.com/in/shou-hao-zhao-a4987b111
+                    </a>
+                  </div>
                 </div>
               </div>
             </aside>
@@ -964,7 +988,7 @@
       <footer class="site-footer">
         <div class="container footer-line">
           <span>© 2026 趙守浩</span>
-          <span>Engineering Leader focused on delivery systems, architecture, and business alignment.</span>
+          <span>Engineering Leader focused on AI-enabled delivery, architecture, and business alignment.</span>
         </div>
       </footer>
     </div>
