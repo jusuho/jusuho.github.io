@@ -1,16 +1,15 @@
-<!doctype html>
-<html lang="zh-Hant">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>趙守浩 | Engineering Leader</title>
-    <meta
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta
       name="description"
-      content="趙守浩的個人網站。聚焦工程團隊建立、AI 協作開發、架構現代化、交付流程標準化與營運導向的技術管理。"
+      content="JuSuHo的個人網站。聚焦工程團隊建立、AI 協作開發、架構現代化、交付流程標準化與營運導向的技術管理。"
     />
     <meta name="theme-color" content="#1d281f" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="趙守浩 | Engineering Leader" />
+    <meta property="og:title" content="JuSuHo | Engineering Leader" />
     <meta
       property="og:description"
       content="聚焦工程團隊建立、AI 協作開發、架構現代化、交付流程標準化與營運導向的技術管理。"
@@ -19,978 +18,734 @@
     <meta property="og:image" content="https://jusuho.github.io/og-preview.svg" />
     <meta property="og:locale" content="zh_TW" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="趙守浩 | Engineering Leader" />
+    <meta name="twitter:title" content="JuSuHo | Engineering Leader" />
     <meta
       name="twitter:description"
       content="聚焦工程團隊建立、AI 協作開發、架構現代化、交付流程標準化與營運導向的技術管理。"
     />
     <meta name="twitter:image" content="https://jusuho.github.io/og-preview.svg" />
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Noto+Serif+TC:wght@500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <style>
-      :root {
-        color-scheme: light;
-        --bg: #f6f1e8;
-        --surface: rgba(255, 250, 243, 0.84);
-        --surface-strong: #fffaf3;
-        --text: #1d281f;
-        --text-soft: #4a584e;
-        --line: rgba(29, 40, 31, 0.12);
-        --line-strong: rgba(29, 40, 31, 0.22);
-        --accent: #b85b34;
-        --accent-deep: #7f3b1f;
-        --shadow: 0 30px 90px rgba(33, 31, 24, 0.1);
-        --radius-xl: 34px;
-        --radius-lg: 24px;
-        --max-width: 1220px;
-      }
-
-      * {
-        box-sizing: border-box;
-      }
-
-      html {
-        scroll-behavior: smooth;
-      }
-
-      body {
-        margin: 0;
-        min-height: 100vh;
-        font-family: "Manrope", sans-serif;
-        color: var(--text);
-        background:
-          radial-gradient(circle at top left, rgba(184, 91, 52, 0.18), transparent 26%),
-          radial-gradient(circle at 82% 12%, rgba(29, 40, 31, 0.08), transparent 24%),
-          linear-gradient(180deg, #f8f4ec 0%, #f6f1e8 44%, #f3ede2 100%);
-      }
-
-      a {
-        color: inherit;
-      }
-
-      ::selection {
-        background: rgba(184, 91, 52, 0.2);
-      }
-
-      .page-shell {
-        position: relative;
-        overflow: clip;
-      }
-
-      .page-shell::before,
-      .page-shell::after {
-        content: "";
-        position: fixed;
-        pointer-events: none;
-        z-index: 0;
-        border-radius: 999px;
-        filter: blur(12px);
-      }
-
-      .page-shell::before {
-        top: 70px;
-        right: -120px;
-        width: 280px;
-        height: 280px;
-        background: rgba(184, 91, 52, 0.08);
-      }
-
-      .page-shell::after {
-        bottom: 120px;
-        left: -100px;
-        width: 220px;
-        height: 220px;
-        background: rgba(29, 40, 31, 0.07);
-      }
-
-      .container {
-        width: min(calc(100% - 56px), var(--max-width));
-        margin: 0 auto;
-        position: relative;
-        z-index: 1;
-      }
-
-      .site-header {
-        padding: 30px 0 22px;
-      }
-
-      .site-nav {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 20px;
-      }
-
-      .brand {
-        display: inline-flex;
-        align-items: baseline;
-        gap: 12px;
-        text-decoration: none;
-      }
-
-      .brand-mark {
-        font-size: 0.8rem;
-        letter-spacing: 0.18em;
-        text-transform: uppercase;
-        color: var(--accent);
-      }
-
-      .brand-name {
-        font-family: "Noto Serif TC", serif;
-        font-size: 1.15rem;
-        font-weight: 700;
-      }
-
-      .nav-links {
-        display: flex;
-        align-items: center;
-        gap: 18px;
-        flex-wrap: wrap;
-      }
-
-      .nav-links a {
-        text-decoration: none;
-        color: var(--text-soft);
-        font-size: 0.95rem;
-      }
-
-      .nav-links a:hover,
-      .nav-links a:focus-visible {
-        color: var(--text);
-      }
-
-      section {
-        padding: 44px 0;
-      }
-
-      .hero {
-        padding: 44px 0 36px;
-      }
-
-      .hero-card {
-        display: grid;
-        grid-template-columns: minmax(0, 1.6fr) minmax(320px, 0.92fr);
-        gap: 32px;
-        align-items: stretch;
-      }
-
-      .hero-main,
-      .hero-aside,
-      .panel,
-      .achievement-card,
-      .timeline-item,
-      .contact-card {
-        border: 1px solid var(--line);
-        border-radius: var(--radius-xl);
-        box-shadow: var(--shadow);
-        backdrop-filter: blur(10px);
-      }
-
-      .hero-main,
-      .hero-aside,
-      .panel,
-      .achievement-card,
-      .timeline-item {
-        background: linear-gradient(180deg, rgba(255, 251, 245, 0.95), rgba(250, 244, 235, 0.78));
-      }
-
-      .hero-main {
-        padding: 48px;
-      }
-
-      .hero-aside {
-        padding: 20px;
-      }
-
-      .eyebrow,
-      .section-kicker,
-      .item-label,
-      .achievement-index {
-        text-transform: uppercase;
-        letter-spacing: 0.14em;
-        font-size: 0.78rem;
-        font-weight: 700;
-        color: var(--accent);
-      }
-
-      h1,
-      h2,
-      h3,
-      p {
-        margin: 0;
-      }
-
-      .hero-title {
-        font-family: "Noto Serif TC", serif;
-        font-size: clamp(3rem, 8vw, 6.3rem);
-        line-height: 0.96;
-        letter-spacing: -0.04em;
-      }
-
-      .hero-title .muted {
-        display: block;
-        color: rgba(29, 40, 31, 0.54);
-      }
-
-      .hero-subtitle {
-        margin-top: 24px;
-        max-width: 20em;
-        font-size: clamp(1.12rem, 2vw, 1.44rem);
-        line-height: 1.68;
-        color: var(--text-soft);
-      }
-
-      .hero-support {
-        margin-top: 24px;
-        max-width: 45rem;
-        font-size: 1.02rem;
-        line-height: 1.85;
-      }
-
-      .hero-actions {
-        display: flex;
-        align-items: center;
-        gap: 14px;
-        flex-wrap: wrap;
-        margin-top: 34px;
-      }
-
-      .button {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        min-height: 52px;
-        padding: 0 20px;
-        border-radius: 999px;
-        text-decoration: none;
-        border: 1px solid transparent;
-        background: var(--text);
-        color: #fff9f0;
-        font-weight: 700;
-        transition:
-          transform 180ms ease,
-          background-color 180ms ease,
-          border-color 180ms ease,
-          color 180ms ease;
-      }
-
-      .button.secondary {
-        background: transparent;
-        color: var(--text);
-        border-color: var(--line-strong);
-      }
-
-      .button:hover,
-      .button:focus-visible {
-        transform: translateY(-1px);
-      }
-
-      .hero-proof {
-        display: grid;
-        gap: 14px;
-        padding: 8px;
-      }
-
-      .profile-card {
-        display: grid;
-        gap: 14px;
-        padding: 18px;
-        border-radius: 24px;
-        background: rgba(255, 250, 243, 0.78);
-        border: 1px solid rgba(29, 40, 31, 0.08);
-      }
-
-      .profile-photo {
-        aspect-ratio: 4 / 5;
-        width: 100%;
-        border-radius: 20px;
-        overflow: hidden;
-        background:
-          linear-gradient(180deg, rgba(29, 40, 31, 0.08), rgba(184, 91, 52, 0.12)),
-          #ede4d7;
-      }
-
-      .profile-photo img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-
-      .profile-photo-placeholder {
-        display: grid;
-        place-items: center;
-        width: 100%;
-        height: 100%;
-        padding: 24px;
-        text-align: center;
-        color: var(--text-soft);
-        line-height: 1.8;
-      }
-
-      .profile-caption {
-        color: var(--text-soft);
-        line-height: 1.75;
-        font-size: 0.95rem;
-      }
-
-      .proof-card {
-        padding: 22px;
-        border-radius: 22px;
-        background: var(--surface-strong);
-        border: 1px solid rgba(29, 40, 31, 0.08);
-      }
-
-      .proof-label {
-        color: var(--text-soft);
-        font-size: 0.82rem;
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
-      }
-
-      .proof-value {
-        margin-top: 10px;
-        font-size: clamp(1.6rem, 3vw, 2.2rem);
-        line-height: 1;
-        font-weight: 800;
-      }
-
-      .proof-note {
-        margin-top: 10px;
-        color: var(--text-soft);
-        line-height: 1.7;
-        font-size: 0.96rem;
-      }
-
-      .section-head {
-        display: grid;
-        grid-template-columns: minmax(0, 1fr) minmax(260px, 0.56fr);
-        gap: 28px;
-        align-items: end;
-        margin-bottom: 30px;
-      }
-
-      .section-title {
-        margin-top: 10px;
-        font-family: "Noto Serif TC", serif;
-        font-size: clamp(2rem, 4.8vw, 3.25rem);
-        line-height: 1.08;
-      }
-
-      .section-intro {
-        color: var(--text-soft);
-        line-height: 1.85;
-        font-size: 0.98rem;
-      }
-
-      .about-grid,
-      .achievements-grid,
-      .timeline,
-      .ownership-grid,
-      .contact-wrap,
-      .snapshot-list,
-      .contact-list {
-        display: grid;
-        gap: 22px;
-      }
-
-      .about-grid {
-        grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr);
-      }
-
-      .panel {
-        padding: 34px;
-      }
-
-      .about-copy p,
-      .timeline-copy p,
-      .contact-copy p {
-        font-size: 1rem;
-        line-height: 1.9;
-      }
-
-      .about-copy p + p,
-      .timeline-copy p + p,
-      .contact-copy p + p {
-        margin-top: 16px;
-      }
-
-      .snapshot-item,
-      .contact-item {
-        padding-top: 16px;
-        border-top: 1px solid var(--line);
-      }
-
-      .snapshot-item:first-child,
-      .contact-item:first-child {
-        padding-top: 0;
-        border-top: none;
-      }
-
-      .item-label {
-        display: block;
-        margin-bottom: 8px;
-      }
-
-      .item-body {
-        line-height: 1.85;
-      }
-
-      .achievements-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .achievement-card {
-        display: grid;
-        gap: 14px;
-        padding: 30px;
-      }
-
-      .achievement-title {
-        font-family: "Noto Serif TC", serif;
-        font-size: 1.45rem;
-        line-height: 1.34;
-      }
-
-      .achievement-copy {
-        color: var(--text-soft);
-        line-height: 1.85;
-      }
-
-      .timeline-item {
-        display: grid;
-        grid-template-columns: 170px minmax(0, 1fr);
-        gap: 28px;
-        padding: 34px;
-      }
-
-      .timeline-period {
-        color: var(--text-soft);
-        font-size: 0.9rem;
-      }
-
-      .timeline-role {
-        margin-top: 10px;
-        font-family: "Noto Serif TC", serif;
-        font-size: 1.48rem;
-        line-height: 1.35;
-      }
-
-      .timeline-company {
-        margin-top: 6px;
-        color: var(--accent-deep);
-        font-weight: 700;
-      }
-
-      .ownership-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .ownership-card h3 {
-        font-size: 1.15rem;
-        margin: 0 0 10px;
-      }
-
-      .ownership-card p {
-        margin: 0;
-        color: var(--text-soft);
-        line-height: 1.85;
-      }
-
-      .contact-wrap {
-        grid-template-columns: minmax(0, 1.08fr) minmax(300px, 0.72fr);
-      }
-
-      .contact-card {
-        background: linear-gradient(180deg, rgba(35, 46, 38, 0.96), rgba(24, 31, 27, 0.96));
-        color: #f7f0e6;
-        padding: 38px;
-      }
-
-      .contact-card .section-kicker,
-      .contact-card .item-label {
-        color: #e6ab82;
-      }
-
-      .contact-note {
-        color: rgba(247, 240, 230, 0.78);
-      }
-
-      .contact-links {
-        padding: 34px;
-      }
-
-      .contact-list a {
-        text-decoration: none;
-        border-bottom: 1px solid rgba(29, 40, 31, 0.22);
-        padding-bottom: 2px;
-      }
-
-      .site-footer {
-        padding: 24px 0 48px;
-      }
-
-      .footer-line {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 16px;
-        padding-top: 20px;
-        border-top: 1px solid var(--line);
-        color: var(--text-soft);
-        font-size: 0.92rem;
-      }
-
-      .fade-up {
-        animation: fadeUp 720ms ease both;
-      }
-
-      .delay-1 {
-        animation-delay: 110ms;
-      }
-
-      .delay-2 {
-        animation-delay: 220ms;
-      }
-
-      .delay-3 {
-        animation-delay: 330ms;
-      }
-
-      @keyframes fadeUp {
-        from {
-          opacity: 0;
-          transform: translateY(22px);
-        }
-
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      a:focus-visible,
-      button:focus-visible {
-        outline: 3px solid rgba(184, 91, 52, 0.34);
-        outline-offset: 3px;
-      }
-
-      @media (max-width: 980px) {
-        .hero-card,
-        .section-head,
-        .about-grid,
-        .contact-wrap,
-        .timeline-item {
-          grid-template-columns: 1fr;
-        }
-
-        .achievements-grid,
-        .ownership-grid {
-          grid-template-columns: 1fr;
-        }
-
-        .hero-main,
-        .panel,
-        .achievement-card,
-        .timeline-item,
-        .contact-card,
-        .contact-links {
-          padding: 28px;
-        }
-      }
-
-      @media (max-width: 720px) {
-        .container {
-          width: min(calc(100% - 28px), var(--max-width));
-        }
-
-        .site-header {
-          padding: 20px 0 16px;
-        }
-
-        .site-nav {
-          align-items: flex-start;
-          flex-direction: column;
-        }
-
-        section {
-          padding: 34px 0;
-        }
-
-        .hero {
-          padding: 24px 0 30px;
-        }
-
-        .hero-main,
-        .hero-aside,
-        .panel,
-        .achievement-card,
-        .timeline-item,
-        .contact-card {
-          border-radius: 26px;
-        }
-
-        .hero-proof {
-          padding: 4px;
-        }
-
-        .proof-card {
-          padding: 18px;
-        }
-
-        .button {
-          width: 100%;
-        }
-
-        .footer-line {
-          align-items: flex-start;
-          flex-direction: column;
-        }
-      }
-
-      @media (prefers-reduced-motion: reduce) {
-        html {
-          scroll-behavior: auto;
-        }
-
-        *,
-        *::before,
-        *::after {
-          animation: none !important;
-          transition: none !important;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <div class="page-shell">
-      <header class="site-header">
-        <div class="container site-nav">
-          <a class="brand" href="#top">
-            <span class="brand-mark">Engineering Leader</span>
-            <span class="brand-name">趙守浩</span>
-          </a>
-          <nav class="nav-links" aria-label="Primary">
-            <a href="#about">關於我</a>
-            <a href="#achievements">代表成果</a>
-            <a href="#experience">經歷</a>
-            <a href="#contact">聯絡</a>
-          </nav>
-        </div>
-      </header>
-
-      <main id="top">
-        <section class="hero">
-          <div class="container hero-card">
-            <div class="hero-main fade-up">
-              <p class="eyebrow">Head / Director Potential</p>
-              <h1 class="hero-title">
-                趙守浩
-                <span class="muted">Engineering Leader</span>
-              </h1>
-              <p class="hero-subtitle">
-                具 7+ 年軟體、系統整合與交付管理經驗，曾建立並帶領跨職能團隊，推動 AI 協作開發、雲端架構重構、交付流程標準化與企業級數位轉型。
-              </p>
-              <p class="hero-support">
-                我專注於把工程團隊、AI 能力、技術架構與商業目標對齊，建立可持續的交付能力，讓系統不只可上線，也能穩定支撐營運成長、流程升級與組織擴張。
-              </p>
-              <div class="hero-actions">
-                <a class="button" href="#contact">洽談職涯機會</a>
-                <a class="button secondary" href="#achievements">查看代表成果</a>
-              </div>
-            </div>
-
-            <aside class="hero-aside fade-up delay-1" aria-label="Key proof points">
-              <div class="hero-proof">
-                <article class="profile-card">
-                  <div class="profile-photo">
-                    <img src="assets/profile.png" alt="趙守浩個人形象照" />
-                  </div>
-                  <p class="profile-caption">
-                    正式商務形象照可補強可信度與記憶點，適合放在首頁第一屏作為管理職個人品牌的信任訊號。
-                  </p>
-                </article>
-                <article class="proof-card">
-                  <div class="proof-label">Team Leadership</div>
-                  <div class="proof-value">6+ 人</div>
-                  <p class="proof-note">從零建立跨職能研發團隊，涵蓋前後端、App 與平台協作。</p>
-                </article>
-                <article class="proof-card">
-                  <div class="proof-label">Cost Impact</div>
-                  <div class="proof-value">-30%</div>
-                  <p class="proof-note">主導雲端架構重構，兼顧可用性、成本與後續擴張性。</p>
-                </article>
-                <article class="proof-card">
-                  <div class="proof-label">Project Scale</div>
-                  <div class="proof-value">NT$5 億+</div>
-                  <p class="proof-note">管理大型系統整合與跨單位協作，累積高金額專案治理經驗。</p>
-                </article>
-                <article class="proof-card">
-                  <div class="proof-label">AI Adoption</div>
-                  <div class="proof-value">Workflow</div>
-                  <p class="proof-note">將 AI 納入程式生成、重構、測試與知識轉譯流程，提升交付槓桿。</p>
-                </article>
-              </div>
-            </aside>
-          </div>
-        </section>
-
-        <section id="about">
-          <div class="container">
-            <div class="section-head">
-              <div>
-                <div class="section-kicker">About</div>
-                <h2 class="section-title">把模糊需求、AI 工具與跨部門壓力，轉成可穩定交付的工程體系</h2>
-              </div>
-              <p class="section-intro">
-                面向高階主管的價值，不是單點技術能力，而是能否在資源有限、需求變動快、跨部門依賴高的環境中建立秩序、節奏與決策品質，並把新技術轉成實際產能。
-              </p>
-            </div>
-
-            <div class="about-grid">
-              <article class="panel about-copy fade-up">
-                <p>
-                  我是趙守浩，現任凡易股份有限公司技術負責人，畢業於國立台灣大學資訊工程研究所。過去 7 到 8 年間，我的工作橫跨全端開發、系統整合、專案管理、雲端架構與工程團隊建立。
-                </p>
-                <p>
-                  我不只負責系統開發，也負責把流程、品質、協作、技術決策與治理機制一起建立起來，讓團隊能在有限資源下持續穩定交付，並降低成長階段常見的技術與管理風險。
-                </p>
-                <p>
-                  我擅長將模糊需求轉化為可執行的技術路線、協作機制與交付節奏，同時兼顧短期交付與中長期可擴張性。
-                </p>
-                <p>
-                  近年我也持續把 AI 納入團隊日常開發流程，讓程式生成、重構、測試與知識傳遞更具槓桿，不把 AI 當話題，而是當成提升交付品質與速度的實用管理工具。
-                </p>
-              </article>
-
-              <aside class="panel fade-up delay-1" aria-label="Leadership snapshot">
-                <div class="section-kicker">Leadership Snapshot</div>
-                <div class="snapshot-list">
-                  <div class="snapshot-item">
-                    <span class="item-label">團隊建立與帶領</span>
-                    <div class="item-body">從零建立跨職能研發團隊，建立角色分工、協作界面與穩定交付節奏。</div>
-                  </div>
-                  <div class="snapshot-item">
-                    <span class="item-label">決策範圍</span>
-                    <div class="item-body">技術選型、架構演進、AI 協作流程、交付流程、品質標準、資訊安全與內部治理。</div>
-                  </div>
-                  <div class="snapshot-item">
-                    <span class="item-label">協作範圍</span>
-                    <div class="item-body">與產品、營運、客戶、供應商及跨部門利害關係人協調目標與優先序。</div>
-                  </div>
-                  <div class="snapshot-item">
-                    <span class="item-label">管理特質</span>
-                    <div class="item-body">能在速度、品質、成本與風險之間做務實取捨，建立可持續的運作方式。</div>
-                  </div>
-                </div>
-              </aside>
-            </div>
-          </div>
-        </section>
-
-        <section id="achievements">
-          <div class="container">
-            <div class="section-head">
-              <div>
-                <div class="section-kicker">Selected Achievements</div>
-                <h2 class="section-title">不是任務清單，而是能說服管理層的經營結果</h2>
-              </div>
-              <p class="section-intro">
-                這些成果聚焦在高階主管真正關心的面向：團隊能力、AI 生產力、成本效率、交付穩定性、營運支撐與大型專案治理。
-              </p>
-            </div>
-
-            <div class="achievements-grid">
-              <article class="achievement-card fade-up">
-                <div class="achievement-index">01</div>
-                <h3 class="achievement-title">建立跨職能研發團隊</h3>
-                <p class="achievement-copy">
-                  從零建立並帶領 6+ 人跨職能團隊，導入 Scrum 與穩定交付節奏，支撐企業級日照資訊系統中台與雙平台 App 開發。
-                </p>
-              </article>
-
-              <article class="achievement-card fade-up delay-1">
-                <div class="achievement-index">02</div>
-                <h3 class="achievement-title">主導雲端架構重構</h3>
-                <p class="achievement-copy">
-                  推動由傳統單體系統轉向 GCP 雲端架構，平衡成本、可用性與後續擴張性，最終降低約 30% 運行成本並提升系統韌性。
-                </p>
-              </article>
-
-              <article class="achievement-card fade-up delay-2">
-                <div class="achievement-index">03</div>
-                <h3 class="achievement-title">建立 CI/CD 與工程標準化</h3>
-                <p class="achievement-copy">
-                  以 GitHub Actions 取代人工部署，將發布流程從 30 分鐘縮短至 10 分鐘內，降低人工作業風險，支援更穩定的高頻交付。
-                </p>
-              </article>
-
-              <article class="achievement-card fade-up delay-3">
-                <div class="achievement-index">04</div>
-                <h3 class="achievement-title">管理大型專案與跨單位協作</h3>
-                <p class="achievement-copy">
-                  於中華電信負責大型系統整合、機房建置、供應商管理、時程與預算控管，累積經手專案金額逾新台幣 5 億元。
-                </p>
-              </article>
-
-              <article class="achievement-card fade-up">
-                <div class="achievement-index">05</div>
-                <h3 class="achievement-title">整合 IoT、BLE 與 OCR 應用</h3>
-                <p class="achievement-copy">
-                  將醫療量測設備資料自動串接至照護流程，並以 Python 與 OCR 自動化資料處理，降低人工輸入成本與錯誤率，提升第一線營運效率。
-                </p>
-              </article>
-
-              <article class="achievement-card fade-up delay-1">
-                <div class="achievement-index">06</div>
-                <h3 class="achievement-title">推動 AI 協作開發與工程知識槓桿</h3>
-                <p class="achievement-copy">
-                  將 AI 導入程式生成、重構、測試撰寫與知識轉譯流程，提升團隊開發槓桿與交付效率，強化有限人力下的產出能力。
-                </p>
-              </article>
-            </div>
-          </div>
-        </section>
-
-        <section id="experience">
-          <div class="container">
-            <div class="section-head">
-              <div>
-                <div class="section-kicker">Experience</div>
-                <h2 class="section-title">兼具產品節奏、AI 導入能力、治理能力與大型專案視角</h2>
-              </div>
-              <p class="section-intro">
-                兩段經歷共同形成我的管理底盤：一段面向成長中的產品與工程體系建立，一段面向高可靠度、合規與跨組織協調。
-              </p>
-            </div>
-
-            <div class="timeline">
-              <article class="timeline-item fade-up">
-                <div>
-                  <div class="timeline-period">現職</div>
-                  <h3 class="timeline-role">Technical Lead / 技術負責人</h3>
-                  <div class="timeline-company">凡易股份有限公司 FanEasy</div>
-                </div>
-                <div class="timeline-copy">
-                  <p>
-                    在凡易，我負責的不只是開發，而是整體技術與交付能力的建立。工作涵蓋產品中台、行動應用、雲端部署、團隊流程、資訊安全與內部 IT 治理。
-                  </p>
-                  <p>
-                    近年的重點不是單一功能開發，而是建立能持續支撐產品成長的工程體系，包括 App 現代化、雲端架構演進、交付標準化、AI 協作開發、IoT/BLE 整合、OCR 自動化與金流系統落地。
-                  </p>
-                </div>
-              </article>
-
-              <article class="timeline-item fade-up delay-1">
-                <div>
-                  <div class="timeline-period">前一階段</div>
-                  <h3 class="timeline-role">Project / Systems Integration Roles</h3>
-                  <div class="timeline-company">中華電信 Chunghwa Telecom</div>
-                </div>
-                <div class="timeline-copy">
-                  <p>
-                    在中華電信期間，我累積了大型專案管理與企業系統整合經驗，負責需求協調、廠商管理、時程與預算控管，以及客製化系統的設計、開發與維運。
-                  </p>
-                  <p>
-                    這段經歷建立了我對高可靠性、合規要求、跨組織協調與高金額專案治理的實務基礎，也讓我更能理解企業決策的風險與現實限制。
-                  </p>
-                </div>
-              </article>
-            </div>
-          </div>
-        </section>
-
-        <section id="scope">
-          <div class="container">
-            <div class="section-head">
-              <div>
-                <div class="section-kicker">What I Lead</div>
-                <h2 class="section-title">我能負責的不只是技術，而是工程運作、AI 落地與交付系統本身</h2>
-              </div>
-              <p class="section-intro">
-                這一段不做關鍵字雲，而是明確說明我可以承接哪些管理範圍，讓職缺與責任邊界更容易對齊。
-              </p>
-            </div>
-
-            <div class="ownership-grid">
-              <article class="panel ownership-card fade-up">
-                <h3>Engineering Leadership</h3>
-                <p>團隊建立、角色分工、Scrum、跨職能協作、Code Review 與交付流程設計。</p>
-              </article>
-              <article class="panel ownership-card fade-up delay-1">
-                <h3>Architecture &amp; Platform</h3>
-                <p>GCP、GKE、Cloud Run、Cloud SQL、架構演進、微服務化、CI/CD 與 Monorepo 管理。</p>
-              </article>
-              <article class="panel ownership-card fade-up delay-2">
-                <h3>AI-Enabled Delivery</h3>
-                <p>AI 協作開發流程設計、程式生成與重構應用、測試撰寫輔助、知識轉譯與團隊產能槓桿。</p>
-              </article>
-              <article class="panel ownership-card fade-up delay-3">
-                <h3>Business &amp; Delivery Alignment</h3>
-                <p>需求釐清、優先序協調、跨部門溝通、供應商協作、交付節奏與風險管理。</p>
-              </article>
-              <article class="panel ownership-card fade-up">
-                <h3>Governance &amp; Operations</h3>
-                <p>ISO 27001、個資保護、Microsoft 365 導入、IT 基礎建設與權限治理。</p>
-              </article>
-            </div>
-          </div>
-        </section>
-
-        <section id="contact">
-          <div class="container contact-wrap">
-            <article class="contact-card fade-up">
-              <div class="section-kicker">Contact</div>
-              <h2 class="section-title">適合正在擴張、現代化或補強管理中層的工程團隊</h2>
-              <div class="contact-copy">
-                <p>
-                  如果你正在尋找能夠帶團隊、建立交付機制、推動架構演進、導入 AI 協作開發，並把技術真正落到營運成果上的工程主管或技術負責人，歡迎與我聯絡。
-                </p>
-                <p class="contact-note">
-                  可洽談 Engineering Manager、Technical Lead、Head of Engineering track 等職務機會。
-                </p>
-              </div>
-            </article>
-
-            <aside class="panel contact-links fade-up delay-1" aria-label="Contact methods">
-              <div class="section-kicker">Reach Out</div>
-              <div class="contact-list">
-                <div class="contact-item">
-                  <span class="item-label">Email</span>
-                  <div class="item-body">
-                    <a href="mailto:j5201314peter@gmail.com">j5201314peter@gmail.com</a>
-                  </div>
-                </div>
-                <div class="contact-item">
-                  <span class="item-label">GitHub</span>
-                  <div class="item-body">
-                    <a href="https://github.com/jusuho" target="_blank" rel="noreferrer">github.com/jusuho</a>
-                  </div>
-                </div>
-                <div class="contact-item">
-                  <span class="item-label">LinkedIn</span>
-                  <div class="item-body">
-                    <a href="https://www.linkedin.com/in/shou-hao-zhao-a4987b111/" target="_blank" rel="noreferrer">
-                      linkedin.com/in/shou-hao-zhao-a4987b111
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </aside>
-          </div>
-        </section>
-      </main>
-
-      <footer class="site-footer">
-        <div class="container footer-line">
-          <span>© 2026 趙守浩</span>
-          <span>Engineering Leader focused on AI-enabled delivery, architecture, and business alignment.</span>
-        </div>
-      </footer>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #f0ede6;
+    --cream-dark: #e6e2da;
+    --ink: #1a1907;
+    --ink-mid: #3a3828;
+    --ink-light: #7a7868;
+    --accent: #1a1907;
+    --warm-white: #faf8f4;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 40px;
+    position: sticky;
+    top: 0;
+    background: var(--cream);
+    z-index: 100;
+    border-bottom: 1px solid transparent;
+  }
+  .nav-logo {
+    display: flex; align-items: center; gap: 8px;
+    font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+  }
+  .nav-dot {
+    width: 10px; height: 10px; border-radius: 50%;
+    background: var(--ink); display: inline-block;
+  }
+  .nav-links {
+    display: flex; gap: 28px; list-style: none;
+  }
+  .nav-links a {
+    text-decoration: none; color: var(--ink-light);
+    font-size: 13px; font-weight: 500; letter-spacing: 0.04em;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--ink); }
+  .nav-menu {
+    background: var(--ink); color: var(--cream);
+    border: none; border-radius: 30px;
+    padding: 10px 22px; font-size: 12px; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer;
+    display: flex; align-items: center; gap: 8px;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  /* ─── HERO ─── */
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 0;
+    padding: 20px 40px 40px;
+    min-height: 520px;
+    align-items: start;
+  }
+
+  .hero-left { padding-top: 10px; }
+
+  .hero-greeting {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 20px; font-weight: 300;
+    color: var(--ink-mid);
+    margin-bottom: 4px;
+  }
+
+  .hero-title {
+    font-family: 'Bebas Neue', sans-serif;
+    line-height: 0.92;
+    letter-spacing: 0.01em;
+    margin-bottom: 16px;
+  }
+  .hero-title .line1 { font-size: 72px; display: block; }
+  .hero-title .line2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 60px;
+    font-style: italic;
+    display: block;
+    letter-spacing: 0.02em;
+  }
+  .hero-title .line3 { font-size: 72px; display: block; }
+
+  .hero-desc {
+    max-width: 280px;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--ink-light);
+    margin-bottom: 28px;
+    font-weight: 400;
+  }
+
+  .hero-tag {
+    display: inline-block;
+    background: var(--cream-dark);
+    border-radius: 20px;
+    padding: 5px 14px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-mid);
+    margin-bottom: 16px;
+  }
+
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--ink); color: var(--cream);
+    border-radius: 40px; padding: 13px 24px;
+    font-size: 12px; font-weight: 600; letter-spacing: 0.08em;
+    text-transform: uppercase; text-decoration: none;
+    transition: transform 0.2s, opacity 0.2s;
+  }
+  .btn-primary:hover { opacity: 0.88; transform: translateY(-1px); }
+  .btn-primary .arrow {
+    width: 28px; height: 28px; border-radius: 50%;
+    background: var(--cream); display: flex; align-items: center; justify-content: center;
+  }
+  .btn-primary .arrow svg { width: 14px; height: 14px; fill: var(--ink); }
+
+  /* ─── HERO CENTER (PHOTO) ─── */
+  .hero-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 30px;
+  }
+  .photo-frame {
+    width: 380px; height: 500px;
+    background: var(--cream-dark);
+    
+    overflow: hidden;
+    display: flex; align-items: flex-end; justify-content: center;
+    border: 2px solid rgba(26,25,7,0.1);
+    position: relative;
+  }
+  .photo-frame img {
+    width: 100%; height: 100%; object-fit: cover; object-position: top;
+    border-radius: inherit;
+  }
+  .photo-placeholder {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    width: 100%; height: 100%;
+    color: var(--ink-light); gap: 8px;
+  }
+  .photo-placeholder svg { width: 60px; height: 60px; opacity: 0.3; }
+  .photo-placeholder span { font-size: 11px; opacity: 0.5; letter-spacing: 0.1em; }
+
+  /* ─── HERO RIGHT (STATS) ─── */
+  .hero-right {
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 28px;
+  }
+  .stat-item { text-align: right; }
+  .stat-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 52px;
+    line-height: 1;
+    color: var(--ink);
+    letter-spacing: 0.02em;
+  }
+  .stat-num sup { font-size: 48px; }
+  .stat-label {
+    font-size: 24px;
+    color: var(--ink-light);
+    letter-spacing: 0.06em;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+
+  /* ─── CAPABILITIES ROW ─── */
+  .capabilities {
+    border-top: 1px solid rgba(26,25,7,0.15);
+    border-bottom: 1px solid rgba(26,25,7,0.15);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin: 0 40px 60px;
+  }
+  .cap-item {
+    padding: 24px 20px;
+    border-right: 1px solid rgba(26,25,7,0.15);
+  }
+  .cap-item:last-child { border-right: none; }
+  .cap-title {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+  .cap-desc {
+    font-size: 12px;
+    color: var(--ink-light);
+    line-height: 1.5;
+  }
+
+  /* ─── SECTION ─── */
+  section { padding: 60px 40px; }
+
+  .section-eyebrow {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    margin-bottom: 4px;
+  }
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 40px;
+  }
+  .section-header-desc {
+    max-width: 380px;
+    font-size: 13px;
+    color: var(--ink-light);
+    line-height: 1.7;
+    padding-top: 4px;
+  }
+
+  /* ─── TRUSTED / KEYWORDS ─── */
+  .trusted-section {
+    padding: 40px 40px;
+    border-top: 1px solid rgba(26,25,7,0.12);
+  }
+  .trusted-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+  .trusted-title {
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--ink-mid);
+  }
+  .trusted-sub { font-size: 12px; color: var(--ink-light); }
+  .skill-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+  .skill-pill {
+    border: 1px solid rgba(26,25,7,0.2);
+    border-radius: 8px;
+    padding: 14px 16px;
+    display: flex; align-items: center; gap: 8px;
+    font-size: 12px; font-weight: 500;
+    color: var(--ink-mid);
+    background: var(--warm-white);
+  }
+  .skill-icon { width: 14px; height: 14px; opacity: 0.5; }
+
+  /* ─── ABOUT ─── */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+    border-top: 1px solid rgba(26,25,7,0.12);
+    padding-top: 60px;
+    margin: 0 40px;
+  }
+  .about-headline {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 56px; line-height: 0.94;
+    letter-spacing: 0.02em;
+    margin-bottom: 0;
+  }
+  .about-right p {
+    font-size: 17px;
+    line-height: 1.65;
+    font-weight: 400;
+    color: var(--ink);
+    margin-bottom: 20px;
+  }
+  .about-right p.lead {
+    font-size: 19px;
+    font-weight: 300;
+    line-height: 1.55;
+  }
+  .about-right p.body-text {
+    font-size: 14px;
+    color: var(--ink-light);
+  }
+
+  /* ─── ACHIEVEMENTS ─── */
+  .ach-section {
+    padding: 60px 40px;
+    border-top: 1px solid rgba(26,25,7,0.12);
+  }
+  .ach-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 48px;
+  }
+  .ach-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 56px; line-height: 0.94;
+  }
+  .ach-subtitle { max-width: 340px; font-size: 13px; color: var(--ink-light); line-height: 1.7; padding-top: 6px; }
+  .ach-list { display: flex; flex-direction: column; gap: 0; }
+  .ach-row {
+    display: grid;
+    grid-template-columns: 48px 1fr auto;
+    gap: 24px;
+    align-items: start;
+    padding: 28px 0;
+    border-top: 1px solid rgba(26,25,7,0.12);
+    transition: background 0.2s;
+  }
+  .ach-row:last-child { border-bottom: 1px solid rgba(26,25,7,0.12); }
+  .ach-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px; color: var(--ink-light);
+    padding-top: 3px;
+  }
+  .ach-name { font-size: 15px; font-weight: 600; color: var(--ink); margin-bottom: 5px; }
+  .ach-desc { font-size: 13px; color: var(--ink-light); line-height: 1.6; }
+  .ach-tag {
+    display: inline-block;
+    background: var(--cream-dark);
+    border-radius: 20px;
+    padding: 5px 12px;
+    font-size: 10px; font-weight: 600;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--ink-mid);
+    white-space: nowrap;
+    margin-top: 2px;
+  }
+
+  /* ─── EXPERTISE ─── */
+  .expertise-section {
+    padding: 60px 40px;
+    border-top: 1px solid rgba(26,25,7,0.12);
+  }
+  .expertise-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    background: rgba(26,25,7,0.1);
+    border: 1px solid rgba(26,25,7,0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-top: 40px;
+  }
+  .exp-cell {
+    background: var(--cream);
+    padding: 28px 24px;
+  }
+  .exp-cell-title {
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--ink); margin-bottom: 10px;
+  }
+  .exp-cell-desc { font-size: 13px; color: var(--ink-light); line-height: 1.6; }
+
+  /* ─── CONTACT ─── */
+  .contact-section {
+    padding: 80px 40px;
+    border-top: 1px solid rgba(26,25,7,0.12);
+  }
+  .contact-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .contact-headline {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 64px; line-height: 0.93;
+  }
+  .contact-desc { font-size: 14px; color: var(--ink-light); line-height: 1.7; margin-top: 20px; max-width: 320px; }
+  .contact-links { display: flex; flex-direction: column; gap: 16px; }
+  .contact-link-row {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 20px 24px;
+    background: var(--warm-white);
+    border: 1px solid rgba(26,25,7,0.15);
+    border-radius: 10px;
+    text-decoration: none;
+    color: var(--ink);
+    transition: background 0.2s, transform 0.2s;
+  }
+  .contact-link-row:hover { background: var(--cream-dark); transform: translateX(4px); }
+  .clr-label { font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-light); margin-bottom: 2px; }
+  .clr-value { font-size: 14px; font-weight: 500; }
+  .clr-arrow { font-size: 18px; opacity: 0.4; }
+
+  /* ─── FOOTER ─── */
+  footer {
+    padding: 24px 40px;
+    border-top: 1px solid rgba(26,25,7,0.12);
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 12px; color: var(--ink-light);
+  }
+  footer .f-logo { font-size: 13px; font-weight: 600; letter-spacing: 0.06em; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <span class="nav-dot"></span>
+    JuSuHo
+  </div>
+  <ul class="nav-links">
+    <li><a href="#about">關於</a></li>
+    <li><a href="#achievements">代表成果</a></li>
+    <li><a href="#experience">經歷</a></li>
+    <li><a href="#contact">聯絡</a></li>
+  </ul>
+  <button class="nav-menu">
+    MENU
+    <svg width="16" height="12" viewBox="0 0 16 12" fill="none" stroke="currentColor" stroke-width="2">
+      <line x1="0" y1="1" x2="16" y2="1"/>
+      <line x1="0" y1="6" x2="16" y2="6"/>
+      <line x1="0" y1="11" x2="16" y2="11"/>
+    </svg>
+  </button>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+
+  <!-- LEFT -->
+  <div class="hero-left">
+    <div class="hero-tag">Head / Director Potential</div>
+    <p class="hero-greeting">Hey, I'm SuHo,</p>
+    <div class="hero-title">
+      <span class="line2">AN ENGINEERING</span>
+      <span class="line2">&amp; </span>
+      <span class="line2">Tech LEADER</span>
     </div>
-  </body>
+    <p class="hero-desc">
+      把AI導入公司、建立工程團隊、技術架構與商業目標對齊，建立可持續的交付能力，讓系統不只可上線，也能穩定支撐營運成長與組織擴張。
+    </p>
+    <a href="#contact" class="btn-primary">
+      洽談機會
+      <span class="arrow">
+        <svg viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
+          <path d="M2 7h10M8 3l4 4-4 4" stroke="#1a1907" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+        </svg>
+      </span>
+    </a>
+  </div>
+
+  <!-- CENTER PHOTO -->
+  <div class="hero-center">
+    <div class="photo-frame">
+      <img src="assets/profile.png" alt="JuSuHo個人形象照" />
+    </div>
+  </div>
+
+  <!-- RIGHT STATS -->
+  <div class="hero-right">
+    <div class="stat-item">
+      <div class="stat-num">10<sup>+</sup></div>
+      <div class="stat-label">Years Experience</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">6<sup>+</sup></div>
+      <div class="stat-label">Team Size Built</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">-30<sup>%</sup></div>
+      <div class="stat-label">Cloud Cost Reduction</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">AI</div>
+      <div class="stat-label">Workflow Integration</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- CAPABILITIES -->
+<div class="capabilities">
+  <div class="cap-item">
+    <div class="cap-title">Engineering Leadership</div>
+    <div class="cap-desc">從零建立跨職能研發團隊，導入 Scrum 與穩定交付節奏。</div>
+  </div>
+  <div class="cap-item">
+    <div class="cap-title">Cloud Architecture</div>
+    <div class="cap-desc">主導 GCP 雲端架構建置，兼顧成本、可用性與擴張性。</div>
+  </div>
+  <div class="cap-item">
+    <div class="cap-title">AI-Enabled Delivery</div>
+    <div class="cap-desc">將 AI 納入程式生成、重構、測試與知識轉譯流程。</div>
+  </div>
+  <div class="cap-item">
+    <div class="cap-title">Governance & Ops</div>
+    <div class="cap-desc">ISO 27001、個資保護、M365 導入與 IT 基礎建設治理。</div>
+  </div>
+</div>
+
+<!-- TRUSTED / SKILLS -->
+<div class="trusted-section">
+  <div class="trusted-header">
+    <div class="trusted-title">Tech Stack</div>
+    <div class="trusted-sub">橫跨前後端、雲端與 AI 整合的完整技術能力</div>
+  </div>
+  <div class="skill-grid">
+    <div class="skill-pill">
+      <svg class="skill-icon" viewBox="0 0 14 14" fill="currentColor"><rect x="1" y="1" width="5" height="5" rx="1"/><rect x="8" y="1" width="5" height="5" rx="1"/><rect x="1" y="8" width="5" height="5" rx="1"/><rect x="8" y="8" width="5" height="5" rx="1"/></svg>
+      React / React Native
+    </div>
+    <div class="skill-pill">
+      <svg class="skill-icon" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="7" cy="7" r="5"/><path d="M7 4v3l2 2"/></svg>
+      C# .NET Core 9
+    </div>
+    <div class="skill-pill">
+      <svg class="skill-icon" viewBox="0 0 14 14" fill="currentColor"><path d="M7 1l1.8 3.6L13 5.5l-3 2.9.7 4.1L7 10.4 3.3 12.5l.7-4.1-3-2.9 4.2-.9z"/></svg>
+      GCP / GKE / Cloud Run
+    </div>
+    <div class="skill-pill">
+      <svg class="skill-icon" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 4h10M2 7h10M2 10h10"/></svg>
+      Python / FastAPI
+    </div>
+    <div class="skill-pill">
+      <svg class="skill-icon" viewBox="0 0 14 14" fill="currentColor"><rect x="2" y="2" width="10" height="10" rx="2"/></svg>
+      GitHub Actions CI/CD
+    </div>
+    <div class="skill-pill">
+      <svg class="skill-icon" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><ellipse cx="7" cy="5" rx="5" ry="2.5"/><path d="M2 5v4c0 1.4 2.2 2.5 5 2.5s5-1.1 5-2.5V5"/></svg>
+      PostgreSQL / SQL Server
+    </div>
+    <div class="skill-pill">
+      <svg class="skill-icon" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 7h8M7 3l4 4-4 4"/></svg>
+      Claude / AI Dev Workflow
+    </div>
+    <div class="skill-pill">
+      <svg class="skill-icon" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="10" height="8" rx="1"/><path d="M5 1v2M9 1v2"/></svg>
+      Nx Monorepo / pnpm
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<div id="about">
+  <div class="about-grid">
+    <div>
+      <div class="section-eyebrow">About</div>
+      <h2 class="about-headline">把模糊需求轉成可穩定交付的工程體系</h2>
+    </div>
+    <div class="about-right">
+      <p class="lead">
+        我是JuSuHo，現任全台最大連鎖日間照顧集團技術負責人，畢業於國立台灣大學資訊工程研究所。
+      </p>
+      <p>
+        過去 10年間，我的工作橫跨推動AI轉型、商業決策、全端開發、系統整合、專案管理、雲端架構與工程團隊建立。我不只負責系統開發，也負責把流程、品質、協作、技術決策與治理機制一起建立起來。
+      </p>
+      <p class="body-text">
+        近期我也持續把 AI 導入至公司，除納入團隊日常開發流程，讓程式生成、重構、測試與知識傳遞更具槓桿，不把 AI 當話題，而是當成提升交付品質與速度的實用管理工具。
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- ACHIEVEMENTS -->
+<div class="ach-section" id="achievements">
+  <div class="ach-header">
+    <div>
+      <div class="section-eyebrow">Selected Achievements</div>
+      <h2 class="ach-title">代表<br>成果</h2>
+    </div>
+    <div class="ach-subtitle">
+      不是任務清單，而是能說服管理層的經營結果。聚焦在團隊能力、AI 生產力、成本效率與大型專案治理。
+    </div>
+  </div>
+
+  <div class="ach-list">
+    <div class="ach-row">
+      <div class="ach-num">01</div>
+      <div>
+        <div class="ach-name">建立跨職能研發團隊</div>
+        <div class="ach-desc">從零建立並帶領 6+ 人跨職能團隊，導入 Scrum 與穩定交付節奏，支撐企業級日照資訊系統中台與雙平台 App 開發。</div>
+      </div>
+      <div><span class="ach-tag">Leadership</span></div>
+    </div>
+    <div class="ach-row">
+      <div class="ach-num">02</div>
+      <div>
+        <div class="ach-name">主導雲端架構重構</div>
+        <div class="ach-desc">推動由傳統單體系統轉向 GCP 雲端架構，最終降低約 30% 運行成本並提升系統韌性。</div>
+      </div>
+      <div><span class="ach-tag">Architecture</span></div>
+    </div>
+    <div class="ach-row">
+      <div class="ach-num">03</div>
+      <div>
+        <div class="ach-name">建立 CI/CD 與工程標準化</div>
+        <div class="ach-desc">以 GitHub Actions 取代人工部署，將發布流程從 30 分鐘縮短至 10 分鐘內，降低人工作業風險。</div>
+      </div>
+      <div><span class="ach-tag">DevOps</span></div>
+    </div>
+    <div class="ach-row">
+      <div class="ach-num">04</div>
+      <div>
+        <div class="ach-name">管理大型專案與跨單位協作</div>
+        <div class="ach-desc">於中華電信負責大型系統整合、機房建置、供應商管理，累積經手專案金額逾新台幣 5 億元。</div>
+      </div>
+      <div><span class="ach-tag">NT$5億+</span></div>
+    </div>
+    <div class="ach-row">
+      <div class="ach-num">05</div>
+      <div>
+        <div class="ach-name">整合 IoT、BLE 與 OCR 應用</div>
+        <div class="ach-desc">將醫療量測設備資料自動串接至照護流程，以 Python 與 OCR 自動化資料處理，降低人工輸入成本與錯誤率。</div>
+      </div>
+      <div><span class="ach-tag">IoT</span></div>
+    </div>
+    <div class="ach-row">
+      <div class="ach-num">06</div>
+      <div>
+        <div class="ach-name">推動 AI 協作開發與工程知識槓桿</div>
+        <div class="ach-desc">將 AI 導入程式生成、重構、測試撰寫與知識轉譯流程，提升團隊開發槓桿與交付效率。</div>
+      </div>
+      <div><span class="ach-tag">AI</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- EXPERTISE -->
+<div class="expertise-section" id="experience">
+  <div class="section-eyebrow">What I Lead</div>
+  <h2 style="font-family:'Bebas Neue',sans-serif;font-size:56px;line-height:0.94;margin-top:8px;">我能負責的範圍</h2>
+  <div class="expertise-grid">
+    <div class="exp-cell">
+      <div class="exp-cell-title">Engineering Leadership</div>
+      <div class="exp-cell-desc">團隊建立、角色分工、Scrum、跨職能協作、Code Review 與交付流程設計。</div>
+    </div>
+    <div class="exp-cell">
+      <div class="exp-cell-title">Architecture & Platform</div>
+      <div class="exp-cell-desc">GCP、GKE、Cloud Run、Cloud SQL、架構演進、微服務化、CI/CD 與 Monorepo 管理。</div>
+    </div>
+    <div class="exp-cell">
+      <div class="exp-cell-title">AI-Enabled Delivery</div>
+      <div class="exp-cell-desc">AI 協作開發流程設計、程式生成與重構應用、測試撰寫輔助、知識轉譯與團隊產能槓桿。</div>
+    </div>
+    <div class="exp-cell">
+      <div class="exp-cell-title">Business Alignment</div>
+      <div class="exp-cell-desc">需求釐清、優先序協調、跨部門溝通、供應商協作、交付節奏與風險管理。</div>
+    </div>
+    <div class="exp-cell">
+      <div class="exp-cell-title">Governance & Operations</div>
+      <div class="exp-cell-desc">ISO 27001、個資保護、Microsoft 365 導入、IT 基礎建設與權限治理。</div>
+    </div>
+    <div class="exp-cell" style="background:var(--ink);color:var(--cream);">
+      <div class="exp-cell-title" style="color:rgba(240,237,230,0.6);">Open to</div>
+      <div class="exp-cell-desc" style="color:var(--cream);font-size:15px;font-weight:500;line-height:1.5;">Engineering Manager<br>Technical Lead<br>Head of Engineering</div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<div class="contact-section" id="contact">
+  <div class="contact-inner">
+    <div>
+      <div class="section-eyebrow">Contact</div>
+      <h2 class="contact-headline">LET'S<br>CONNECT</h2>
+      <p class="contact-desc">
+        如果你正在尋找能夠帶團隊、建立交付機制、推動架構演進、導入 AI 協作開發的工程主管，歡迎與我聯絡。
+      </p>
+    </div>
+    <div class="contact-links">
+      <a href="mailto:j5201314peter@gmail.com" class="contact-link-row">
+        <div>
+          <div class="clr-label">Email</div>
+          <div class="clr-value">j5201314peter@gmail.com</div>
+        </div>
+        <div class="clr-arrow">↗</div>
+      </a>
+      <a href="https://github.com/jusuho" class="contact-link-row" target="_blank">
+        <div>
+          <div class="clr-label">GitHub</div>
+          <div class="clr-value">github.com/jusuho</div>
+        </div>
+        <div class="clr-arrow">↗</div>
+      </a>
+      <a href="https://www.linkedin.com/in/shou-hao-zhao-a4987b111" class="contact-link-row" target="_blank">
+        <div>
+          <div class="clr-label">LinkedIn</div>
+          <div class="clr-value">linkedin.com/in/shou-hao-zhao</div>
+        </div>
+        <div class="clr-arrow">↗</div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="f-logo">● JuSuHo</div>
+  <div>© 2026 — Engineering Leader focused on AI-enabled delivery & architecture</div>
+  <div><a href="https://jusuho.github.io" style="color:inherit;text-decoration:none;opacity:0.6;">jusuho.github.io</a></div>
+</footer>
+
+</body>
 </html>
