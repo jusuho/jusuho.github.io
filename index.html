@@ -12,7 +12,7 @@
     <meta property="og:title" content="JuSuHo | Engineering Leader" />
     <meta
       property="og:description"
-      content="聚焦工程團隊建立、AI 協作開發、架構現代化、交付流程標準化與營運導向的技術管理。"
+      content="JuSuHo的個人網站。聚焦工程團隊建立、企業AI導入、架構現代化、交付流程標準化與營運導向的技術管理。"
     />
     <meta property="og:url" content="https://jusuho.github.io/" />
     <meta property="og:image" content="https://jusuho.github.io/og-preview.svg" />
@@ -42,6 +42,7 @@
     --color-ink-mid: #3a3828;
     --color-ink-light: #7a7868;
     --color-warm-white: #faf8f4;
+    --color-amber: #C8640E;
 
     /* ==================================
        2. Semantic Variables (語意化變數)
@@ -61,28 +62,17 @@
 
     /* 互動色 (Interactive) */
     --accent-primary: var(--color-ink);
+    --accent-cta: var(--color-amber);
 
-    /* ==================================
-       3. Legacy Variables (向下相容)
-       保留原變數映射至基礎色盤，
-       確保目前網站的 CSS 不跑版。
-       ================================== */
-    --cream: var(--color-cream);
-    --cream-dark: var(--color-cream-dark);
-    --ink: var(--color-ink);
-    --ink-mid: var(--color-ink-mid);
-    --ink-light: var(--color-ink-light);
-    --warm-white: var(--color-warm-white);
-    --accent: var(--accent-primary);
   }
 
   html { scroll-behavior: smooth; }
 
   body {
-    background: var(--cream);
-    color: var(--ink);
+    background: var(--bg-primary);
+    color: var(--text-primary);
     font-family: 'DM Sans', sans-serif;
-    font-size: 15px;
+    font-size: 17px;
     line-height: 1.6;
     overflow-x: hidden;
   }
@@ -95,31 +85,31 @@
     padding: 20px 40px;
     position: sticky;
     top: 0;
-    background: var(--cream);
+    background: var(--bg-primary);
     z-index: 100;
     border-bottom: 1px solid transparent;
   }
   .nav-logo {
     display: flex; align-items: center; gap: 8px;
-    font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+    font-size: 14px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
   }
   .nav-dot {
     width: 10px; height: 10px; border-radius: 50%;
-    background: var(--ink); display: inline-block;
+    background: var(--accent-primary); display: inline-block;
   }
   .nav-links {
     display: flex; gap: 28px; list-style: none;
   }
   .nav-links a {
-    text-decoration: none; color: var(--ink-light);
-    font-size: 13px; font-weight: 500; letter-spacing: 0.04em;
+    text-decoration: none; color: var(--text-muted);
+    font-size: 14px; font-weight: 500; letter-spacing: 0.04em;
     transition: color 0.2s;
   }
-  .nav-links a:hover { color: var(--ink); }
+  .nav-links a:hover { color: var(--text-primary); }
   .nav-menu {
-    background: var(--ink); color: var(--cream);
+    background: var(--accent-primary); color: var(--text-inverse);
     border: none; border-radius: 30px;
-    padding: 10px 22px; font-size: 12px; font-weight: 600;
+    padding: 10px 22px; font-size: 15px; font-weight: 600;
     letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer;
     display: flex; align-items: center; gap: 8px;
     font-family: 'DM Sans', sans-serif;
@@ -139,8 +129,8 @@
 
   .hero-greeting {
     font-family: 'DM Sans', sans-serif;
-    font-size: 20px; font-weight: 300;
-    color: var(--ink-mid);
+    font-size: 24px; font-weight: 300;
+    color: var(--text-secondary);
     margin-bottom: 4px;
   }
 
@@ -150,52 +140,52 @@
     letter-spacing: 0.01em;
     margin-bottom: 16px;
   }
-  .hero-title .line1 { font-size: 72px; display: block; }
+  .hero-title .line1 { font-size: 80px; display: block; }
   .hero-title .line2 {
     font-family: 'Playfair Display', serif;
-    font-size: 60px;
+    font-size: 68px;
     font-style: italic;
     display: block;
     letter-spacing: 0.02em;
   }
-  .hero-title .line3 { font-size: 72px; display: block; }
+  .hero-title .line3 { font-size: 80px; display: block; }
 
   .hero-desc {
     max-width: 280px;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 1.7;
-    color: var(--ink-light);
+    color: var(--text-muted);
     margin-bottom: 28px;
     font-weight: 400;
   }
 
   .hero-tag {
     display: inline-block;
-    background: var(--cream-dark);
+    background: var(--bg-tertiary);
     border-radius: 20px;
     padding: 5px 14px;
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 600;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--ink-mid);
+    color: var(--text-secondary);
     margin-bottom: 16px;
   }
 
   .btn-primary {
     display: inline-flex; align-items: center; gap: 10px;
-    background: var(--ink); color: var(--cream);
+    background: var(--accent-primary); color: var(--text-inverse);
     border-radius: 40px; padding: 13px 24px;
-    font-size: 16px; font-weight: 600; letter-spacing: 0.08em;
+    font-size: 17px; font-weight: 600; letter-spacing: 0.08em;
     text-transform: uppercase; text-decoration: none;
     transition: transform 0.2s, opacity 0.2s;
   }
   .btn-primary:hover { opacity: 0.88; transform: translateY(-1px); }
   .btn-primary .arrow {
     width: 28px; height: 28px; border-radius: 50%;
-    background: var(--cream); display: flex; align-items: center; justify-content: center;
+    background: var(--bg-primary); display: flex; align-items: center; justify-content: center;
   }
-  .btn-primary .arrow svg { width: 14px; height: 14px; fill: var(--ink); }
+  .btn-primary .arrow svg { width: 14px; height: 14px; fill: var(--text-primary); }
 
   /* ─── HERO CENTER (PHOTO) ─── */
   .hero-center {
@@ -204,10 +194,30 @@
     align-items: center;
     padding: 0 30px;
   }
+  .hero-center .btn-primary {
+    margin-top: -28px;
+    position: relative;
+    z-index: 1;
+    padding: 18px 44px;
+    font-size: 19px;
+    background: var(--accent-cta);
+    box-shadow: 0 8px 32px rgba(200,100,14,0.40);
+  }
+  .hero-center .btn-primary:hover {
+    opacity: 1;
+    background: #a8520b;
+    transform: translateY(-2px);
+  }
+  .hero-center .btn-primary .arrow {
+    width: 36px; height: 36px;
+  }
+  .hero-center .btn-primary .arrow svg {
+    width: 16px; height: 16px;
+  }
   .photo-frame {
     width: 380px; height: 500px;
-    background: var(--cream-dark);
-    
+    background: var(--bg-tertiary);
+
     overflow: hidden;
     display: flex; align-items: flex-end; justify-content: center;
     border: 2px solid rgba(26,25,7,0.1);
@@ -220,10 +230,10 @@
   .photo-placeholder {
     display: flex; flex-direction: column; align-items: center; justify-content: center;
     width: 100%; height: 100%;
-    color: var(--ink-light); gap: 8px;
+    color: var(--text-muted); gap: 8px;
   }
   .photo-placeholder svg { width: 60px; height: 60px; opacity: 0.3; }
-  .photo-placeholder span { font-size: 11px; opacity: 0.5; letter-spacing: 0.1em; }
+  .photo-placeholder span { font-size: 12px; opacity: 0.5; letter-spacing: 0.1em; }
 
   /* ─── HERO RIGHT (STATS) ─── */
   .hero-right {
@@ -236,15 +246,15 @@
   .stat-item { text-align: right; }
   .stat-num {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 52px;
+    font-size: 56px;
     line-height: 1;
-    color: var(--ink);
+    color: var(--text-primary);
     letter-spacing: 0.02em;
   }
-  .stat-num sup { font-size: 48px; }
+  .stat-num sup { font-size: 52px; }
   .stat-label {
-    font-size: 24px;
-    color: var(--ink-light);
+    font-size: 26px;
+    color: var(--text-muted);
     letter-spacing: 0.06em;
     font-weight: 500;
     text-transform: uppercase;
@@ -264,16 +274,16 @@
   }
   .cap-item:last-child { border-right: none; }
   .cap-title {
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 700;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: var(--ink);
+    color: var(--text-primary);
     margin-bottom: 6px;
   }
   .cap-desc {
-    font-size: 12px;
-    color: var(--ink-light);
+    font-size: 14px;
+    color: var(--text-muted);
     line-height: 1.5;
   }
 
@@ -281,11 +291,11 @@
   section { padding: 60px 40px; }
 
   .section-eyebrow {
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 700;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: var(--ink-light);
+    color: var(--text-muted);
     margin-bottom: 4px;
   }
   .section-header {
@@ -296,8 +306,8 @@
   }
   .section-header-desc {
     max-width: 380px;
-    font-size: 13px;
-    color: var(--ink-light);
+    font-size: 15px;
+    color: var(--text-muted);
     line-height: 1.7;
     padding-top: 4px;
   }
@@ -314,11 +324,11 @@
     margin-bottom: 24px;
   }
   .trusted-title {
-    font-size: 10px; font-weight: 700;
+    font-size: 12px; font-weight: 700;
     letter-spacing: 0.14em; text-transform: uppercase;
-    color: var(--ink-mid);
+    color: var(--text-secondary);
   }
-  .trusted-sub { font-size: 12px; color: var(--ink-light); }
+  .trusted-sub { font-size: 14px; color: var(--text-muted); }
   .skill-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -329,9 +339,9 @@
     border-radius: 8px;
     padding: 14px 16px;
     display: flex; align-items: center; gap: 8px;
-    font-size: 12px; font-weight: 500;
-    color: var(--ink-mid);
-    background: var(--warm-white);
+    font-size: 14px; font-weight: 500;
+    color: var(--text-secondary);
+    background: var(--bg-secondary);
   }
   .skill-icon { width: 14px; height: 14px; opacity: 0.5; }
 
@@ -347,25 +357,25 @@
   }
   .about-headline {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 56px; line-height: 0.94;
+    font-size: 60px; line-height: 0.94;
     letter-spacing: 0.02em;
     margin-bottom: 0;
   }
   .about-right p {
-    font-size: 17px;
+    font-size: 18px;
     line-height: 1.65;
     font-weight: 400;
-    color: var(--ink);
+    color: var(--text-primary);
     margin-bottom: 20px;
   }
   .about-right p.lead {
-    font-size: 19px;
+    font-size: 21px;
     font-weight: 300;
     line-height: 1.55;
   }
   .about-right p.body-text {
-    font-size: 14px;
-    color: var(--ink-light);
+    font-size: 16px;
+    color: var(--text-muted);
   }
 
   /* ─── ACHIEVEMENTS ─── */
@@ -381,9 +391,9 @@
   }
   .ach-title {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 56px; line-height: 0.94;
+    font-size: 60px; line-height: 0.94;
   }
-  .ach-subtitle { max-width: 340px; font-size: 13px; color: var(--ink-light); line-height: 1.7; padding-top: 6px; }
+  .ach-subtitle { max-width: 340px; font-size: 15px; color: var(--text-muted); line-height: 1.7; padding-top: 6px; }
   .ach-list { display: flex; flex-direction: column; gap: 0; }
   .ach-row {
     display: grid;
@@ -397,19 +407,19 @@
   .ach-row:last-child { border-bottom: 1px solid rgba(26,25,7,0.12); }
   .ach-num {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 22px; color: var(--ink-light);
+    font-size: 24px; color: var(--text-muted);
     padding-top: 3px;
   }
-  .ach-name { font-size: 15px; font-weight: 600; color: var(--ink); margin-bottom: 5px; }
-  .ach-desc { font-size: 13px; color: var(--ink-light); line-height: 1.6; }
+  .ach-name { font-size: 17px; font-weight: 600; color: var(--text-primary); margin-bottom: 5px; }
+  .ach-desc { font-size: 15px; color: var(--text-muted); line-height: 1.6; }
   .ach-tag {
     display: inline-block;
-    background: var(--cream-dark);
+    background: var(--bg-tertiary);
     border-radius: 20px;
     padding: 5px 12px;
-    font-size: 10px; font-weight: 600;
+    font-size: 12px; font-weight: 600;
     letter-spacing: 0.08em; text-transform: uppercase;
-    color: var(--ink-mid);
+    color: var(--text-secondary);
     white-space: nowrap;
     margin-top: 2px;
   }
@@ -430,15 +440,15 @@
     margin-top: 40px;
   }
   .exp-cell {
-    background: var(--cream);
+    background: var(--bg-primary);
     padding: 28px 24px;
   }
   .exp-cell-title {
-    font-size: 10px; font-weight: 700;
+    font-size: 24px; font-weight: 700;
     letter-spacing: 0.12em; text-transform: uppercase;
-    color: var(--ink); margin-bottom: 10px;
+    color: var(--text-primary); margin-bottom: 10px;
   }
-  .exp-cell-desc { font-size: 13px; color: var(--ink-light); line-height: 1.6; }
+  .exp-cell-desc { font-size: 16px; color: var(--text-muted); line-height: 1.6; }
 
   /* ─── CONTACT ─── */
   .contact-section {
@@ -453,24 +463,24 @@
   }
   .contact-headline {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 64px; line-height: 0.93;
+    font-size: 68px; line-height: 0.93;
   }
-  .contact-desc { font-size: 14px; color: var(--ink-light); line-height: 1.7; margin-top: 20px; max-width: 320px; }
+  .contact-desc { font-size: 16px; color: var(--text-muted); line-height: 1.7; margin-top: 20px; max-width: 320px; }
   .contact-links { display: flex; flex-direction: column; gap: 16px; }
   .contact-link-row {
     display: flex; align-items: center; justify-content: space-between;
     padding: 20px 24px;
-    background: var(--warm-white);
+    background: var(--bg-secondary);
     border: 1px solid rgba(26,25,7,0.15);
     border-radius: 10px;
     text-decoration: none;
-    color: var(--ink);
+    color: var(--text-primary);
     transition: background 0.2s, transform 0.2s;
   }
-  .contact-link-row:hover { background: var(--cream-dark); transform: translateX(4px); }
-  .clr-label { font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-light); margin-bottom: 2px; }
-  .clr-value { font-size: 14px; font-weight: 500; }
-  .clr-arrow { font-size: 18px; opacity: 0.4; }
+  .contact-link-row:hover { background: var(--bg-tertiary); transform: translateX(4px); }
+  .clr-label { font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 2px; }
+  .clr-value { font-size: 16px; font-weight: 500; }
+  .clr-arrow { font-size: 20px; opacity: 0.4; }
 
   /* ─── AI TRACK RECORD ─── */
   .ai-track-section {
@@ -485,12 +495,12 @@
   }
   .ai-track-title {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 56px; line-height: 0.94;
+    font-size: 60px; line-height: 0.94;
   }
   .ai-track-subtitle {
     max-width: 340px;
-    font-size: 13px;
-    color: var(--ink-light);
+    font-size: 15px;
+    color: var(--text-muted);
     line-height: 1.7;
     padding-top: 6px;
   }
@@ -504,24 +514,24 @@
     overflow: hidden;
   }
   .ai-track-card {
-    background: var(--cream);
+    background: var(--bg-primary);
     padding: 32px 28px;
   }
   .ai-track-num {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 22px;
-    color: var(--ink-light);
+    font-size: 24px;
+    color: var(--text-muted);
     margin-bottom: 12px;
   }
   .ai-track-card-title {
-    font-size: 15px;
+    font-size: 17px;
     font-weight: 600;
-    color: var(--ink);
+    color: var(--text-primary);
     margin-bottom: 10px;
   }
   .ai-track-card-desc {
-    font-size: 13px;
-    color: var(--ink-light);
+    font-size: 15px;
+    color: var(--text-muted);
     line-height: 1.7;
   }
 
@@ -530,9 +540,9 @@
     padding: 24px 40px;
     border-top: 1px solid rgba(26,25,7,0.12);
     display: flex; justify-content: space-between; align-items: center;
-    font-size: 12px; color: var(--ink-light);
+    font-size: 14px; color: var(--text-muted);
   }
-  footer .f-logo { font-size: 13px; font-weight: 600; letter-spacing: 0.06em; }
+  footer .f-logo { font-size: 15px; font-weight: 600; letter-spacing: 0.06em; }
 </style>
 </head>
 <body>
@@ -564,7 +574,7 @@
 
   <!-- LEFT -->
   <div class="hero-left">
-    <div class="hero-tag">Tech Leader ｜ AI Transformation Consultant</div>
+    <div class="hero-tag">Tech Leader ｜ AI Consultant</div>
     <p class="hero-greeting">Hey, I'm SuHo,</p>
     <div class="hero-title">
       <span class="line1">TECH LEADER</span>
@@ -572,8 +582,15 @@
       <span class="line3">CONSULTANT</span>
     </div>
     <p class="hero-desc">
-      協助企業在 3–6 個月內完成 AI 導入與工程流程重構，將開發產能提升、成本下降，並建立可持續交付的技術體系。具有新創0到1之實務經驗，目前開放高階技術管理職缺洽談，以及企業 AI 導入與技術顧問專案合作。
+      具有新創0到1之實務經驗，協助企業在 3–6 個月內完成 AI 導入與工程流程重構，將開發產能提升、成本下降，並建立可持續交付的技術體系。目前開放高階技術管理職缺洽談，以及企業 AI 導入與技術顧問專案合作。
     </p>
+  </div>
+
+  <!-- CENTER PHOTO -->
+  <div class="hero-center">
+    <div class="photo-frame">
+      <img src="assets/profile.png" alt="JuSuHo個人形象照" />
+    </div>
     <a href="#contact" class="btn-primary">
       洽談機會
       <span class="arrow">
@@ -582,13 +599,6 @@
         </svg>
       </span>
     </a>
-  </div>
-
-  <!-- CENTER PHOTO -->
-  <div class="hero-center">
-    <div class="photo-frame">
-      <img src="assets/profile.png" alt="JuSuHo個人形象照" />
-    </div>
   </div>
 
   <!-- RIGHT STATS -->
@@ -606,7 +616,7 @@
       <div class="stat-label">Cloud Cost Reduction</div>
     </div>
     <div class="stat-item">
-      <div class="stat-num">AI</div>
+      <div class="stat-num">AI-NATIVE</div>
       <div class="stat-label">Enterprise AI Integration</div>
     </div>
   </div>
@@ -617,15 +627,15 @@
 <div class="capabilities">
   <div class="cap-item">
     <div class="cap-title">Engineering Leadership</div>
-    <div class="cap-desc">從零建立跨職能研發團隊，導入 Scrum 與穩定交付節奏。</div>
-  </div>
-  <div class="cap-item">
-    <div class="cap-title">Cloud Architecture</div>
-    <div class="cap-desc">主導 GCP 雲端架構建置，兼顧成本、可用性與擴張性。</div>
+    <div class="cap-desc">從零建立跨職能研發團隊，培養團隊成員能力成長。</div>
   </div>
   <div class="cap-item">
     <div class="cap-title">AI-Enabled Delivery</div>
     <div class="cap-desc">將 AI 納入程式生成、重構、測試與知識轉譯流程。</div>
+  </div>
+  <div class="cap-item">
+    <div class="cap-title">Cloud Architecture</div>
+    <div class="cap-desc">主導 GCP 雲端架構建置，兼顧成本、可用性與擴張性。</div>
   </div>
   <div class="cap-item">
     <div class="cap-title">Governance & Ops</div>
@@ -740,12 +750,28 @@
       <div class="ach-num">01</div>
       <div>
         <div class="ach-name">建立跨職能研發團隊</div>
-        <div class="ach-desc">從零建立並帶領 6+ 人跨職能團隊，導入 Scrum 與穩定交付節奏，支撐企業級日照資訊系統中台與雙平台 App 開發。</div>
+        <div class="ach-desc">從零建立並帶領 6+ 人跨職能團隊，導入 Scrum 與穩定交付節奏，培養團隊成員成長，支撐企業級日照資訊系統SaaS與雙平台 App 開發。</div>
       </div>
       <div><span class="ach-tag">Leadership</span></div>
     </div>
     <div class="ach-row">
       <div class="ach-num">02</div>
+      <div>
+        <div class="ach-name">推動 AI 協作開發與工程知識槓桿</div>
+        <div class="ach-desc">將 AI 導入程式生成、重構、測試撰寫與知識轉譯流程，提升團隊開發槓桿與交付效率。</div>
+      </div>
+      <div><span class="ach-tag">AI</span></div>
+    </div>
+    <div class="ach-row">
+      <div class="ach-num">03</div>
+      <div>
+        <div class="ach-name">管理大型專案與跨單位協作</div>
+        <div class="ach-desc">於電信業龍頭服務期間負責大型系統整合、IDC機房建置、供應商管理，累積經手專案金額逾新台幣 5 億元。</div>
+      </div>
+      <div><span class="ach-tag">NT$5億+</span></div>
+    </div>
+    <div class="ach-row">
+      <div class="ach-num">04</div>
       <div>
         <div class="ach-name">主導雲端架構重構</div>
         <div class="ach-desc">推動由傳統單體系統轉向 GCP 雲端架構，最終降低約 30% 運行成本並提升系統韌性。</div>
@@ -753,44 +779,30 @@
       <div><span class="ach-tag">Architecture</span></div>
     </div>
     <div class="ach-row">
-      <div class="ach-num">03</div>
+      <div class="ach-num">05</div>
       <div>
         <div class="ach-name">建立 CI/CD 與工程標準化</div>
         <div class="ach-desc">以 GitHub Actions 取代人工部署，將發布流程從 30 分鐘縮短至 10 分鐘內，降低人工作業風險。</div>
       </div>
       <div><span class="ach-tag">DevOps</span></div>
     </div>
+    
     <div class="ach-row">
-      <div class="ach-num">04</div>
-      <div>
-        <div class="ach-name">管理大型專案與跨單位協作</div>
-        <div class="ach-desc">於中華電信負責大型系統整合、機房建置、供應商管理，累積經手專案金額逾新台幣 5 億元。</div>
-      </div>
-      <div><span class="ach-tag">NT$5億+</span></div>
-    </div>
-    <div class="ach-row">
-      <div class="ach-num">05</div>
+      <div class="ach-num">06</div>
       <div>
         <div class="ach-name">整合 IoT、BLE 與 OCR 應用</div>
         <div class="ach-desc">將醫療量測設備資料自動串接至照護流程，以 Python 與 OCR 自動化資料處理，降低人工輸入成本與錯誤率。</div>
       </div>
       <div><span class="ach-tag">IoT</span></div>
     </div>
-    <div class="ach-row">
-      <div class="ach-num">06</div>
-      <div>
-        <div class="ach-name">推動 AI 協作開發與工程知識槓桿</div>
-        <div class="ach-desc">將 AI 導入程式生成、重構、測試撰寫與知識轉譯流程，提升團隊開發槓桿與交付效率。</div>
-      </div>
-      <div><span class="ach-tag">AI</span></div>
-    </div>
+    
   </div>
 </div>
 
 <!-- EXPERTISE -->
 <div class="expertise-section" id="experience">
   <div class="section-eyebrow">What I Lead</div>
-  <h2 style="font-family:'Bebas Neue',sans-serif;font-size:56px;line-height:0.94;margin-top:8px;">我能負責的範圍</h2>
+  <h2 style="font-family:'Bebas Neue',sans-serif;font-size:60px;line-height:0.94;margin-top:8px;">我能負責的範圍</h2>
   <div class="expertise-grid">
     <div class="exp-cell">
       <div class="exp-cell-title">Engineering Leadership</div>
@@ -812,9 +824,9 @@
       <div class="exp-cell-title">Governance & Operations</div>
       <div class="exp-cell-desc">ISO 27001、個資保護、Microsoft 365 導入、IT 基礎建設與權限治理。</div>
     </div>
-    <div class="exp-cell" style="background:var(--ink);color:var(--cream);">
+    <div class="exp-cell" style="background:var(--bg-inverse);color:var(--text-inverse);">
       <div class="exp-cell-title" style="color:rgba(240,237,230,0.6);">Open to</div>
-      <div class="exp-cell-desc" style="color:var(--cream);font-size:15px;font-weight:500;line-height:1.5;">Engineering Manager<br>Technical Lead<br>Fractional CTO<br>企業 AI 導入評估與架構設計</div>
+      <div class="exp-cell-desc" style="color:var(--text-inverse);font-size:17px;font-weight:500;line-height:1.5;">Engineering Manager<br>Technical Lead<br>Fractional CTO<br>企業 AI 導入評估與架構設計</div>
     </div>
   </div>
 </div>
