@@ -543,6 +543,152 @@
     font-size: 14px; color: var(--text-muted);
   }
   footer .f-logo { font-size: 15px; font-weight: 600; letter-spacing: 0.06em; }
+
+  /* ══════════════════════════════════════
+     RWD — Tablet (≤ 900px)
+     ══════════════════════════════════════ */
+  @media (max-width: 900px) {
+    nav { padding: 16px 24px; }
+
+    /* Hero: 三欄 → 單欄，photo 居中 */
+    .hero {
+      grid-template-columns: 1fr;
+      padding: 20px 24px 32px;
+      min-height: auto;
+    }
+    .hero-left  { order: 1; }
+    .hero-center { order: 2; align-items: center; }
+    .hero-right {
+      order: 3;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      justify-content: space-around;
+      padding-top: 24px;
+      gap: 12px 24px;
+    }
+    .stat-item { text-align: center; }
+    .stat-num  { font-size: 40px; }
+    .stat-label { font-size: 15px; }
+
+    /* Photo */
+    .photo-frame { width: 100%; max-width: 480px; height: 400px; }
+
+    /* Hero title 縮小一級 */
+    .hero-title .line1,
+    .hero-title .line3 { font-size: 64px; }
+    .hero-title .line2  { font-size: 52px; }
+
+    /* Capabilities: 4欄 → 2欄 */
+    .capabilities {
+      grid-template-columns: repeat(2, 1fr);
+      margin: 0 24px 40px;
+    }
+    .cap-item:nth-child(2) { border-right: none; }
+
+    /* Skills: 3欄 → 2欄 */
+    .trusted-section { padding: 32px 24px; }
+    .skill-grid { grid-template-columns: repeat(2, 1fr); }
+
+    /* About: 雙欄 → 單欄 */
+    .about-grid {
+      grid-template-columns: 1fr;
+      margin: 0 24px;
+      gap: 32px;
+    }
+
+    /* Expertise: 3欄 → 2欄 */
+    .expertise-grid { grid-template-columns: repeat(2, 1fr); }
+
+    /* Contact: 雙欄 → 單欄 */
+    .contact-inner { grid-template-columns: 1fr; gap: 40px; }
+
+    /* AI Track: 2欄 → 1欄 */
+    .ai-track-grid { grid-template-columns: 1fr; }
+
+    /* Section padding 縮小 */
+    section,
+    .ach-section,
+    .expertise-section,
+    .contact-section,
+    .ai-track-section { padding: 48px 24px; }
+
+    footer { padding: 20px 24px; }
+  }
+
+  /* ══════════════════════════════════════
+     RWD — Mobile (≤ 540px)
+     ══════════════════════════════════════ */
+  @media (max-width: 540px) {
+    nav { padding: 14px 16px; }
+    .nav-links { display: none; }
+
+    .hero { padding: 16px 16px 24px; }
+
+    /* Hero title 再縮 */
+    .hero-title .line1,
+    .hero-title .line3 { font-size: 52px; }
+    .hero-title .line2  { font-size: 42px; }
+    .hero-greeting { font-size: 18px; }
+    .hero-desc { font-size: 16px; max-width: 100%; }
+
+    /* Photo 再矮 */
+    .photo-frame { height: 300px; }
+
+    /* Hero CTA 稍微縮一點 */
+    .hero-center .btn-primary {
+      padding: 15px 32px;
+      font-size: 17px;
+      margin-top: -22px;
+    }
+
+    /* Stats 緊湊排 */
+    .hero-right { padding-top: 16px; gap: 8px 16px; }
+    .stat-num   { font-size: 32px; }
+    .stat-num sup { font-size: 28px; }
+    .stat-label { font-size: 13px; }
+
+    /* Capabilities: 2欄 → 1欄 */
+    .capabilities {
+      grid-template-columns: 1fr;
+      margin: 0 16px 28px;
+    }
+    .cap-item { border-right: none; }
+
+    /* Skills: 2欄 → 1欄 */
+    .trusted-section { padding: 24px 16px; }
+    .skill-grid { grid-template-columns: 1fr; }
+
+    /* About */
+    .about-grid { margin: 0 16px; gap: 24px; }
+    .about-headline { font-size: 44px; }
+
+    /* Achievements */
+    .ach-header,
+    .section-header { flex-direction: column; gap: 12px; }
+    .ach-row { grid-template-columns: 40px 1fr; gap: 16px; }
+    .ach-row > :last-child { display: none; }
+
+    /* Expertise: 2欄 → 1欄 */
+    .expertise-grid { grid-template-columns: 1fr; }
+
+    /* AI track header */
+    .ai-track-header { flex-direction: column; gap: 12px; }
+
+    /* Contact */
+    .contact-headline { font-size: 52px; }
+    .contact-desc { max-width: 100%; }
+
+    /* Section padding */
+    section,
+    .ach-section,
+    .expertise-section,
+    .contact-section,
+    .ai-track-section { padding: 36px 16px; }
+
+    footer { padding: 18px 16px; flex-direction: column; gap: 8px; text-align: center; }
+  }
+
 </style>
 </head>
 <body>
