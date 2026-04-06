@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta
       name="description"
-      content="JuSuHo的個人網站。聚焦工程團隊建立、AI 協作開發、架構現代化、交付流程標準化與營運導向的技術管理。"
+      content="JuSuHo的個人網站。聚焦工程團隊建立、企業AI導入、架構現代化、交付流程標準化與營運導向的技術管理。"
     />
     <meta name="theme-color" content="#1d281f" />
     <meta property="og:type" content="website" />
@@ -32,13 +32,48 @@
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --cream: #f0ede6;
-    --cream-dark: #e6e2da;
-    --ink: #1a1907;
-    --ink-mid: #3a3828;
-    --ink-light: #7a7868;
-    --accent: #1a1907;
-    --warm-white: #faf8f4;
+    /* ==================================
+       1. Base Color Palette (基礎色盤) 
+       在此統一管理實體顏色，方便未來抽換
+       ================================== */
+    --color-cream: #f0ede6;
+    --color-cream-dark: #e6e2da;
+    --color-ink: #1a1907;
+    --color-ink-mid: #3a3828;
+    --color-ink-light: #7a7868;
+    --color-warm-white: #faf8f4;
+
+    /* ==================================
+       2. Semantic Variables (語意化變數)
+       UI 元件開發時應全面使用這些變數
+       ================================== */
+    /* 背景色 (Backgrounds) */
+    --bg-primary: var(--color-cream);
+    --bg-secondary: var(--color-warm-white);
+    --bg-tertiary: var(--color-cream-dark);
+    --bg-inverse: var(--color-ink);
+
+    /* 文字色 (Typography) */
+    --text-primary: var(--color-ink);
+    --text-secondary: var(--color-ink-mid);
+    --text-muted: var(--color-ink-light);
+    --text-inverse: var(--color-cream);
+
+    /* 互動色 (Interactive) */
+    --accent-primary: var(--color-ink);
+
+    /* ==================================
+       3. Legacy Variables (向下相容)
+       保留原變數映射至基礎色盤，
+       確保目前網站的 CSS 不跑版。
+       ================================== */
+    --cream: var(--color-cream);
+    --cream-dark: var(--color-cream-dark);
+    --ink: var(--color-ink);
+    --ink-mid: var(--color-ink-mid);
+    --ink-light: var(--color-ink-light);
+    --warm-white: var(--color-warm-white);
+    --accent: var(--accent-primary);
   }
 
   html { scroll-behavior: smooth; }
@@ -286,7 +321,7 @@
   .trusted-sub { font-size: 12px; color: var(--ink-light); }
   .skill-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 10px;
   }
   .skill-pill {
@@ -437,6 +472,59 @@
   .clr-value { font-size: 14px; font-weight: 500; }
   .clr-arrow { font-size: 18px; opacity: 0.4; }
 
+  /* ─── AI TRACK RECORD ─── */
+  .ai-track-section {
+    padding: 60px 40px;
+    border-top: 1px solid rgba(26,25,7,0.12);
+  }
+  .ai-track-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 40px;
+  }
+  .ai-track-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 56px; line-height: 0.94;
+  }
+  .ai-track-subtitle {
+    max-width: 340px;
+    font-size: 13px;
+    color: var(--ink-light);
+    line-height: 1.7;
+    padding-top: 6px;
+  }
+  .ai-track-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+    background: rgba(26,25,7,0.1);
+    border: 1px solid rgba(26,25,7,0.1);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .ai-track-card {
+    background: var(--cream);
+    padding: 32px 28px;
+  }
+  .ai-track-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    color: var(--ink-light);
+    margin-bottom: 12px;
+  }
+  .ai-track-card-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 10px;
+  }
+  .ai-track-card-desc {
+    font-size: 13px;
+    color: var(--ink-light);
+    line-height: 1.7;
+  }
+
   /* ─── FOOTER ─── */
   footer {
     padding: 24px 40px;
@@ -476,15 +564,15 @@
 
   <!-- LEFT -->
   <div class="hero-left">
-    <div class="hero-tag">Head / Director Potential</div>
+    <div class="hero-tag">Tech Leader ｜ AI Transformation Consultant</div>
     <p class="hero-greeting">Hey, I'm SuHo,</p>
     <div class="hero-title">
-      <span class="line2">AN ENGINEERING</span>
-      <span class="line2">&amp; </span>
-      <span class="line2">Tech LEADER</span>
+      <span class="line1">TECH LEADER</span>
+      <span class="line2">&amp; AI</span>
+      <span class="line3">CONSULTANT</span>
     </div>
     <p class="hero-desc">
-      把AI導入公司、建立工程團隊、技術架構與商業目標對齊，建立可持續的交付能力，讓系統不只可上線，也能穩定支撐營運成長與組織擴張。
+      協助企業在 3–6 個月內完成 AI 導入與工程流程重構，將開發產能提升、成本下降，並建立可持續交付的技術體系。具有新創0到1之實務經驗，目前開放高階技術管理職缺洽談，以及企業 AI 導入與技術顧問專案合作。
     </p>
     <a href="#contact" class="btn-primary">
       洽談機會
@@ -519,7 +607,7 @@
     </div>
     <div class="stat-item">
       <div class="stat-num">AI</div>
-      <div class="stat-label">Workflow Integration</div>
+      <div class="stat-label">Enterprise AI Integration</div>
     </div>
   </div>
 
@@ -553,36 +641,28 @@
   </div>
   <div class="skill-grid">
     <div class="skill-pill">
+      <svg class="skill-icon" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 7h8M7 3l4 4-4 4"/></svg>
+      AI Agent / RAG / LLMOps / Vector DB
+    </div>
+    <div class="skill-pill">
       <svg class="skill-icon" viewBox="0 0 14 14" fill="currentColor"><rect x="1" y="1" width="5" height="5" rx="1"/><rect x="8" y="1" width="5" height="5" rx="1"/><rect x="1" y="8" width="5" height="5" rx="1"/><rect x="8" y="8" width="5" height="5" rx="1"/></svg>
       React / React Native
     </div>
     <div class="skill-pill">
       <svg class="skill-icon" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="7" cy="7" r="5"/><path d="M7 4v3l2 2"/></svg>
-      C# .NET Core 9
+      C# .NET Core / Python FastAPI
     </div>
     <div class="skill-pill">
       <svg class="skill-icon" viewBox="0 0 14 14" fill="currentColor"><path d="M7 1l1.8 3.6L13 5.5l-3 2.9.7 4.1L7 10.4 3.3 12.5l.7-4.1-3-2.9 4.2-.9z"/></svg>
-      GCP / GKE / Cloud Run
-    </div>
-    <div class="skill-pill">
-      <svg class="skill-icon" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 4h10M2 7h10M2 10h10"/></svg>
-      Python / FastAPI
-    </div>
-    <div class="skill-pill">
-      <svg class="skill-icon" viewBox="0 0 14 14" fill="currentColor"><rect x="2" y="2" width="10" height="10" rx="2"/></svg>
-      GitHub Actions CI/CD
+      GCP / K8S / Cloud Run
     </div>
     <div class="skill-pill">
       <svg class="skill-icon" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><ellipse cx="7" cy="5" rx="5" ry="2.5"/><path d="M2 5v4c0 1.4 2.2 2.5 5 2.5s5-1.1 5-2.5V5"/></svg>
       PostgreSQL / SQL Server
     </div>
     <div class="skill-pill">
-      <svg class="skill-icon" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 7h8M7 3l4 4-4 4"/></svg>
-      Claude / AI Dev Workflow
-    </div>
-    <div class="skill-pill">
-      <svg class="skill-icon" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="10" height="8" rx="1"/><path d="M5 1v2M9 1v2"/></svg>
-      Nx Monorepo / pnpm
+      <svg class="skill-icon" viewBox="0 0 14 14" fill="currentColor"><rect x="2" y="2" width="10" height="10" rx="2"/></svg>
+      GitHub Actions CI/CD
     </div>
   </div>
 </div>
@@ -602,8 +682,43 @@
         過去 10年間，我的工作橫跨推動AI轉型、商業決策、全端開發、系統整合、專案管理、雲端架構與工程團隊建立。我不只負責系統開發，也負責把流程、品質、協作、技術決策與治理機制一起建立起來。
       </p>
       <p class="body-text">
-        近期我也持續把 AI 導入至公司，除納入團隊日常開發流程，讓程式生成、重構、測試與知識傳遞更具槓桿，不把 AI 當話題，而是當成提升交付品質與速度的實用管理工具。
+        近期我也持續把 AI 導入至公司各個環節，包含團隊日常開發流程，讓程式生成、重構、測試與知識傳遞更具槓桿，不把 AI 當話題，而是提升企業利潤與交付速度的實用武器。
       </p>
+    </div>
+  </div>
+</div>
+
+<!-- AI TRACK RECORD -->
+<div class="ai-track-section">
+  <div class="ai-track-header">
+    <div>
+      <div class="section-eyebrow">Result</div>
+      <h2 class="ai-track-title">AI 落地實績</h2>
+    </div>
+    <div class="ai-track-subtitle">
+      不只導入工具，而是把 AI 嵌入流程、創造可量化的業務成果。
+    </div>
+  </div>
+  <div class="ai-track-grid">
+    <div class="ai-track-card">
+      <div class="ai-track-num">01</div>
+      <div class="ai-track-card-title">研發流程全面 AI 化與產能槓桿</div>
+      <div class="ai-track-card-desc">深入評估並將 AI 工具整合至工程團隊日常 Workflow。不只是發帳號，更建立 AI 輔助 Code Review、單元測試自動生成與重構的標準作業準則。成功將功能交付產能顯著提升 25%，並降低新進工程師訓練與知識傳遞成本。</div>
+    </div>
+    <div class="ai-track-card">
+      <div class="ai-track-num">02</div>
+      <div class="ai-track-card-title">AI 驅動的知識管理與決策支援</div>
+      <div class="ai-track-card-desc">建立企業級知識庫，將數百份技術文件、架構決策與營運 SOP 結構化並導入 RAG 系統。使非技術背景的業務與管理人員能透過自然語言快速查詢與決策，大幅減少跨部門溝通成本與資訊落差。</div>
+    </div>
+    <div class="ai-track-card">
+      <div class="ai-track-num">03</div>
+      <div class="ai-track-card-title">AI 驅動的智能客服與工單自動化</div>
+      <div class="ai-track-card-desc">導入具備深度語意理解能力的企業級 AI 智能客服架構，針對高頻問題進行 24 小時精準回覆。深度整合後台系統，讓 AI 自動摘要客戶請求、辨識潛在意圖並分派工單，有效降低前線客服 40% 以上的重複性作業負載。</div>
+    </div>
+    <div class="ai-track-card">
+      <div class="ai-track-num">04</div>
+      <div class="ai-track-card-title">行銷與營運自動化工作流程 (AI Workflow)</div>
+      <div class="ai-track-card-desc">結合 LLM 與自動化整合工具，為非技術團隊打造專屬的自動化 Pipeline。從市場資料搜集、多語系 SEO 內容生成、到跨社群渠道的自動推播排程，將內容產製週期從數天大幅縮短至數小時內完成。</div>
     </div>
   </div>
 </div>
@@ -699,7 +814,7 @@
     </div>
     <div class="exp-cell" style="background:var(--ink);color:var(--cream);">
       <div class="exp-cell-title" style="color:rgba(240,237,230,0.6);">Open to</div>
-      <div class="exp-cell-desc" style="color:var(--cream);font-size:15px;font-weight:500;line-height:1.5;">Engineering Manager<br>Technical Lead<br>Head of Engineering</div>
+      <div class="exp-cell-desc" style="color:var(--cream);font-size:15px;font-weight:500;line-height:1.5;">Engineering Manager<br>Technical Lead<br>Fractional CTO<br>企業 AI 導入評估與架構設計</div>
     </div>
   </div>
 </div>
@@ -711,7 +826,7 @@
       <div class="section-eyebrow">Contact</div>
       <h2 class="contact-headline">LET'S<br>CONNECT</h2>
       <p class="contact-desc">
-        如果你正在尋找能夠帶團隊、建立交付機制、推動架構演進、導入 AI 協作開發的工程主管，歡迎與我聯絡。
+        如果你正在尋找能夠帶團隊、建立交付機制、推動架構演進、導入 AI 協作開發的技術主管，歡迎與我聯絡。
       </p>
     </div>
     <div class="contact-links">
