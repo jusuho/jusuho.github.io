@@ -304,13 +304,6 @@
     align-items: flex-start;
     margin-bottom: 40px;
   }
-  .section-header-desc {
-    max-width: 380px;
-    font-size: 15px;
-    color: var(--text-muted);
-    line-height: 1.7;
-    padding-top: 4px;
-  }
 
   /* ─── TRUSTED / KEYWORDS ─── */
   .trusted-section {
@@ -322,11 +315,6 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 24px;
-  }
-  .trusted-title {
-    font-size: 12px; font-weight: 700;
-    letter-spacing: 0.14em; text-transform: uppercase;
-    color: var(--text-secondary);
   }
   .trusted-sub { font-size: 14px; color: var(--text-muted); }
   .skill-grid {
@@ -355,7 +343,7 @@
     padding-top: 60px;
     margin: 0 40px;
   }
-  .about-headline {
+  .section-title {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 60px; line-height: 0.94;
     letter-spacing: 0.02em;
@@ -383,17 +371,7 @@
     padding: 60px 40px;
     border-top: 1px solid rgba(26,25,7,0.12);
   }
-  .ach-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 48px;
-  }
-  .ach-title {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 60px; line-height: 0.94;
-  }
-  .ach-subtitle { max-width: 340px; font-size: 15px; color: var(--text-muted); line-height: 1.7; padding-top: 6px; }
+  .section-subtitle { max-width: 340px; font-size: 15px; color: var(--text-muted); line-height: 1.7; padding-top: 6px; }
   .ach-list { display: flex; flex-direction: column; gap: 0; }
   .ach-row {
     display: grid;
@@ -486,23 +464,6 @@
   .ai-track-section {
     padding: 60px 40px;
     border-top: 1px solid rgba(26,25,7,0.12);
-  }
-  .ai-track-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 40px;
-  }
-  .ai-track-title {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 60px; line-height: 0.94;
-  }
-  .ai-track-subtitle {
-    max-width: 340px;
-    font-size: 15px;
-    color: var(--text-muted);
-    line-height: 1.7;
-    padding-top: 6px;
   }
   .ai-track-grid {
     display: grid;
@@ -622,6 +583,13 @@
   @media (max-width: 540px) {
     nav { padding: 14px 16px; }
     .nav-links { display: none; }
+    .nav-links.open {
+      display: flex; flex-direction: column; align-items: flex-start;
+      position: absolute; top: 60px; left: 0; right: 0;
+      background: var(--bg-primary); padding: 16px 20px 20px;
+      border-bottom: 1px solid var(--border);
+      gap: 16px; z-index: 999;
+    }
 
     .hero { padding: 16px 16px 24px; }
 
@@ -661,10 +629,9 @@
 
     /* About */
     .about-grid { margin: 0 16px; gap: 24px; }
-    .about-headline { font-size: 44px; }
+    .section-title { font-size: 44px; }
 
     /* Achievements */
-    .ach-header,
     .section-header { flex-direction: column; gap: 12px; }
     .ach-row { grid-template-columns: 40px 1fr; gap: 16px; }
     .ach-row > :last-child { display: none; }
@@ -673,7 +640,7 @@
     .expertise-grid { grid-template-columns: 1fr; }
 
     /* AI track header */
-    .ai-track-header { flex-direction: column; gap: 12px; }
+    
 
     /* Contact */
     .contact-headline { font-size: 52px; }
@@ -728,7 +695,7 @@
       <span class="line3">CONSULTANT</span>
     </div>
     <p class="hero-desc">
-      具有新創0到1之實務經驗，協助企業在 3–6 個月內完成 AI 導入與工程流程重構，將開發產能提升、成本下降，並建立可持續交付的技術體系。目前開放高階技術管理職缺洽談，以及企業 AI 導入與技術顧問專案合作。
+      具有新創0到1之實務、電信龍頭、外商實習經驗。擅長協助企業在 3–6 個月內完成 AI 導入與工程流程重構，將開發產能提升、成本下降，並建立可持續交付的技術體系。目前開放高階技術管理職缺洽談，以及企業 AI 導入與技術顧問專案合作。
     </p>
   </div>
 
@@ -758,8 +725,8 @@
       <div class="stat-label">Team Size Built</div>
     </div>
     <div class="stat-item">
-      <div class="stat-num">-30<sup>%</sup></div>
-      <div class="stat-label">Cloud Cost Reduction</div>
+      <div class="stat-num">500M<sup>+</sup></div>
+      <div class="stat-label">Project Value Delivered</div>
     </div>
     <div class="stat-item">
       <div class="stat-num">AI-NATIVE</div>
@@ -776,23 +743,23 @@
     <div class="cap-desc">從零建立跨職能研發團隊，培養團隊成員能力成長。</div>
   </div>
   <div class="cap-item">
-    <div class="cap-title">AI-Enabled Delivery</div>
-    <div class="cap-desc">將 AI 納入程式生成、重構、測試與知識轉譯流程。</div>
+    <div class="cap-title">AI-Native Delivery</div>
+    <div class="cap-desc">打造 AI 原生開發工作流，將自動化審查、重構與測試深度整合至 CI/CD，極大化工程團隊產能與開發者體驗。</div>
   </div>
   <div class="cap-item">
     <div class="cap-title">Cloud Architecture</div>
-    <div class="cap-desc">主導 GCP 雲端架構建置，兼顧成本、可用性與擴張性。</div>
+    <div class="cap-desc">主導企業級 SaaS 與多端 App 底層架構，基於 雲端與K8S 打造高可用、易擴展的現代化服務體系。</div>
   </div>
   <div class="cap-item">
     <div class="cap-title">Governance & Ops</div>
-    <div class="cap-desc">ISO 27001、個資保護、M365 導入與 IT 基礎建設治理。</div>
+    <div class="cap-desc">制定企業級資訊安全與合規框架（ISO 27001 / 個資保護），建立足以支撐集團多品牌擴展的 IT 基礎建設與權限治理機制。</div>
   </div>
 </div>
 
 <!-- TRUSTED / SKILLS -->
 <div class="trusted-section">
   <div class="trusted-header">
-    <div class="trusted-title">Tech Stack</div>
+    <div class="section-eyebrow">Tech Stack</div>
     <div class="trusted-sub">橫跨前後端、雲端與 AI 整合的完整技術能力</div>
   </div>
   <div class="skill-grid">
@@ -828,7 +795,7 @@
   <div class="about-grid">
     <div>
       <div class="section-eyebrow">About</div>
-      <h2 class="about-headline">把模糊需求轉成可穩定交付的工程體系</h2>
+      <h2 class="section-title">把模糊需求轉成可穩定交付的工程體系</h2>
     </div>
     <div class="about-right">
       <p class="lead">
@@ -846,12 +813,12 @@
 
 <!-- AI TRACK RECORD -->
 <div class="ai-track-section">
-  <div class="ai-track-header">
+  <div class="section-header">
     <div>
       <div class="section-eyebrow">Result</div>
-      <h2 class="ai-track-title">AI 落地實績</h2>
+      <h2 class="section-title">AI 落地實績</h2>
     </div>
-    <div class="ai-track-subtitle">
+    <div class="section-subtitle">
       不只導入工具，而是把 AI 嵌入流程、創造可量化的業務成果。
     </div>
   </div>
@@ -881,12 +848,12 @@
 
 <!-- ACHIEVEMENTS -->
 <div class="ach-section" id="achievements">
-  <div class="ach-header">
+  <div class="section-header">
     <div>
       <div class="section-eyebrow">Selected Achievements</div>
-      <h2 class="ach-title">代表<br>成果</h2>
+      <h2 class="section-title">代表<br>成果</h2>
     </div>
-    <div class="ach-subtitle">
+    <div class="section-subtitle">
       不是任務清單，而是能說服管理層的經營結果。聚焦在團隊能力、AI 生產力、成本效率與大型專案治理。
     </div>
   </div>
@@ -948,7 +915,7 @@
 <!-- EXPERTISE -->
 <div class="expertise-section" id="experience">
   <div class="section-eyebrow">What I Lead</div>
-  <h2 style="font-family:'Bebas Neue',sans-serif;font-size:60px;line-height:0.94;margin-top:8px;">我能負責的範圍</h2>
+  <h2 class="section-title">我能負責的範圍</h2>
   <div class="expertise-grid">
     <div class="exp-cell">
       <div class="exp-cell-title">Engineering Leadership</div>
@@ -1019,6 +986,18 @@
   <div>© 2026 — Engineering Leader focused on AI-enabled delivery & architecture</div>
   <div><a href="https://jusuho.github.io" style="color:inherit;text-decoration:none;opacity:0.6;">jusuho.github.io</a></div>
 </footer>
+
+<script>
+  const menuBtn = document.querySelector('.nav-menu');
+  const navLinks = document.querySelector('.nav-links');
+  menuBtn.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+  });
+  // 點選連結後自動收起
+  navLinks.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => navLinks.classList.remove('open'));
+  });
+</script>
 
 </body>
 </html>
