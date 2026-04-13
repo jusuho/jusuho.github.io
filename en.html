@@ -1,27 +1,27 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta
       name="description"
-      content="JuSuHo的個人網站。聚焦工程團隊建立、企業AI導入、架構現代化、交付流程標準化與營運導向的技術管理。"
+      content="JuSuHo's personal website. Focused on engineering team building, enterprise AI integration, architecture modernization, delivery standardization, and operations-oriented technical leadership."
     />
     <meta name="theme-color" content="#1d281f" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="JuSuHo | Engineering Leader" />
     <meta
       property="og:description"
-      content="JuSuHo的個人網站。聚焦工程團隊建立、企業AI導入、架構現代化、交付流程標準化與營運導向的技術管理。"
+      content="JuSuHo's personal website. Focused on engineering team building, enterprise AI integration, architecture modernization, delivery standardization, and operations-oriented technical leadership."
     />
-    <meta property="og:url" content="https://jusuho.github.io/" />
+    <meta property="og:url" content="https://jusuho.github.io/en" />
     <meta property="og:image" content="https://jusuho.github.io/og-preview.svg" />
-    <meta property="og:locale" content="zh_TW" />
+    <meta property="og:locale" content="en_US" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="JuSuHo | Engineering Leader" />
     <meta
       name="twitter:description"
-      content="聚焦工程團隊建立、AI 協作開發、架構現代化、交付流程標準化與營運導向的技術管理。"
+      content="Focused on engineering team building, AI-native development, architecture modernization, delivery standardization, and operations-oriented technical leadership."
     />
     <meta name="twitter:image" content="https://jusuho.github.io/og-preview.svg" />
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
@@ -33,8 +33,7 @@
 
   :root {
     /* ==================================
-       1. Base Color Palette (基礎色盤) 
-       在此統一管理實體顏色，方便未來抽換
+       1. Base Color Palette
        ================================== */
     --color-cream: #f0ede6;
     --color-cream-dark: #e6e2da;
@@ -45,22 +44,18 @@
     --color-amber: #C8640E;
 
     /* ==================================
-       2. Semantic Variables (語意化變數)
-       UI 元件開發時應全面使用這些變數
+       2. Semantic Variables
        ================================== */
-    /* 背景色 (Backgrounds) */
     --bg-primary: var(--color-cream);
     --bg-secondary: var(--color-warm-white);
     --bg-tertiary: var(--color-cream-dark);
     --bg-inverse: var(--color-ink);
 
-    /* 文字色 (Typography) */
     --text-primary: var(--color-ink);
     --text-secondary: var(--color-ink-mid);
     --text-muted: var(--color-ink-light);
     --text-inverse: var(--color-cream);
 
-    /* 互動色 (Interactive) */
     --accent-primary: var(--color-ink);
     --accent-cta: var(--color-amber);
 
@@ -235,7 +230,6 @@
   .photo-frame {
     width: 380px; height: 500px;
     background: var(--bg-tertiary);
-
     overflow: hidden;
     display: flex; align-items: flex-end; justify-content: center;
     border: 2px solid rgba(26,25,7,0.1);
@@ -529,7 +523,6 @@
   @media (max-width: 900px) {
     nav { padding: 16px 24px; }
 
-    /* Hero: 三欄 → 單欄，photo 居中 */
     .hero {
       grid-template-columns: 1fr;
       padding: 20px 24px 32px;
@@ -550,42 +543,33 @@
     .stat-num  { font-size: 40px; }
     .stat-label { font-size: 15px; }
 
-    /* Photo */
     .photo-frame { width: 100%; max-width: 480px; height: 400px; }
 
-    /* Hero title 縮小一級 */
     .hero-title .line1,
     .hero-title .line3 { font-size: 64px; }
     .hero-title .line2  { font-size: 52px; }
 
-    /* Capabilities: 4欄 → 2欄 */
     .capabilities {
       grid-template-columns: repeat(2, 1fr);
       margin: 0 24px 40px;
     }
     .cap-item:nth-child(2) { border-right: none; }
 
-    /* Skills: 3欄 → 2欄 */
     .trusted-section { padding: 32px 24px; }
     .skill-grid { grid-template-columns: repeat(2, 1fr); }
 
-    /* About: 雙欄 → 單欄 */
     .about-grid {
       grid-template-columns: 1fr;
       margin: 0 24px;
       gap: 32px;
     }
 
-    /* Expertise: 3欄 → 2欄 */
     .expertise-grid { grid-template-columns: repeat(2, 1fr); }
 
-    /* Contact: 雙欄 → 單欄 */
     .contact-inner { grid-template-columns: 1fr; gap: 40px; }
 
-    /* AI Track: 2欄 → 1欄 */
     .ai-track-grid { grid-template-columns: 1fr; }
 
-    /* Section padding 縮小 */
     section,
     .ach-section,
     .expertise-section,
@@ -612,60 +596,46 @@
 
     .hero { padding: 16px 16px 24px; }
 
-    /* Hero title 再縮 */
     .hero-title .line1,
     .hero-title .line3 { font-size: 52px; }
     .hero-title .line2  { font-size: 42px; }
     .hero-greeting { font-size: 18px; }
     .hero-desc { font-size: 16px; max-width: 100%; }
 
-    /* Photo 再矮 */
     .photo-frame { height: 300px; }
 
-    /* Hero CTA 稍微縮一點 */
     .hero-center .btn-primary {
       padding: 15px 32px;
       font-size: 17px;
       margin-top: -22px;
     }
 
-    /* Stats 緊湊排 */
     .hero-right { padding-top: 16px; gap: 8px 16px; }
     .stat-num   { font-size: 32px; }
     .stat-num sup { font-size: 28px; }
     .stat-label { font-size: 13px; }
 
-    /* Capabilities: 2欄 → 1欄 */
     .capabilities {
       grid-template-columns: 1fr;
       margin: 0 16px 28px;
     }
     .cap-item { border-right: none; }
 
-    /* Skills: 2欄 → 1欄 */
     .trusted-section { padding: 24px 16px; }
     .skill-grid { grid-template-columns: 1fr; }
 
-    /* About */
     .about-grid { margin: 0 16px; gap: 24px; }
     .section-title { font-size: 44px; }
 
-    /* Achievements */
     .section-header { flex-direction: column; gap: 12px; }
     .ach-row { grid-template-columns: 40px 1fr; gap: 16px; }
     .ach-row > :last-child { display: none; }
 
-    /* Expertise: 2欄 → 1欄 */
     .expertise-grid { grid-template-columns: 1fr; }
 
-    /* AI track header */
-    
-
-    /* Contact */
     .contact-headline { font-size: 52px; }
     .contact-desc { max-width: 100%; }
 
-    /* Section padding */
     section,
     .ach-section,
     .expertise-section,
@@ -686,16 +656,16 @@
     JuSuHo
   </div>
   <ul class="nav-links">
-    <li><a href="#about">關於</a></li>
-    <li><a href="#achievements">代表成果</a></li>
-    <li><a href="#experience">經歷</a></li>
-    <li><a href="#contact">聯絡</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#achievements">Achievements</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#contact">Contact</a></li>
   </ul>
   <div class="nav-right">
     <div class="lang-switch">
-      <a href="index.html" class="active">中</a>
+      <a href="index.html">中</a>
       <span class="lang-sep">|</span>
-      <a href="en.html">EN</a>
+      <a href="en.html" class="active">EN</a>
     </div>
     <button class="nav-menu">
       MENU
@@ -721,17 +691,17 @@
       <span class="line3">CONSULTANT</span>
     </div>
     <p class="hero-desc">
-      具有新創0到1之實務、電信龍頭、外商實習經驗。擅長協助企業在 3–6 個月內完成 AI 導入與工程流程重構，將開發產能提升、成本下降，並建立可持續交付的技術體系。目前開放高階技術管理職缺洽談，以及企業 AI 導入與技術顧問專案合作。
+      Hands-on experience spanning startup 0-to-1 builds, Taiwan's largest telco, and international internships. I help organizations complete AI integration and engineering transformation within 3–6 months—boosting development capacity, reducing costs, and establishing sustainable delivery systems.
     </p>
   </div>
 
   <!-- CENTER PHOTO -->
   <div class="hero-center">
     <div class="photo-frame">
-      <img src="assets/profile.png" alt="JuSuHo個人形象照" />
+      <img src="assets/profile.png" alt="JuSuHo profile photo" />
     </div>
     <a href="#contact" class="btn-primary">
-      洽談機會
+      Let's Talk
       <span class="arrow">
         <svg viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
           <path d="M2 7h10M8 3l4 4-4 4" stroke="#1a1907" stroke-width="1.5" fill="none" stroke-linecap="round"/>
@@ -766,19 +736,19 @@
 <div class="capabilities">
   <div class="cap-item">
     <div class="cap-title">Engineering Leadership</div>
-    <div class="cap-desc">從零建立跨職能研發團隊，培養團隊成員能力成長。</div>
+    <div class="cap-desc">Build and scale cross-functional R&D teams from scratch, nurturing individual growth along the way.</div>
   </div>
   <div class="cap-item">
     <div class="cap-title">AI-Native Delivery</div>
-    <div class="cap-desc">打造 AI 原生開發工作流，將自動化審查、重構與測試深度整合至 CI/CD，極大化工程團隊產能與開發者體驗。</div>
+    <div class="cap-desc">Build AI-native development workflows with automated review, refactoring, and testing deeply integrated into CI/CD—maximizing engineering capacity and developer experience.</div>
   </div>
   <div class="cap-item">
     <div class="cap-title">Cloud Architecture</div>
-    <div class="cap-desc">主導企業級 SaaS 與多端 App 底層架構，基於 雲端與K8S 打造高可用、易擴展的現代化服務體系。</div>
+    <div class="cap-desc">Lead enterprise-grade SaaS and multi-platform app infrastructure on cloud and Kubernetes—building highly available, scalable modern service systems.</div>
   </div>
   <div class="cap-item">
     <div class="cap-title">Governance & Ops</div>
-    <div class="cap-desc">制定企業級資訊安全與合規框架（ISO 27001 / 個資保護），建立足以支撐集團多品牌擴展的 IT 基礎建設與權限治理機制。</div>
+    <div class="cap-desc">Define enterprise information security and compliance frameworks (ISO 27001 / data protection), establishing IT infrastructure and access governance to support multi-brand group expansion.</div>
   </div>
 </div>
 
@@ -786,7 +756,7 @@
 <div class="trusted-section">
   <div class="trusted-header">
     <div class="section-eyebrow">Tech Stack</div>
-    <div class="trusted-sub">橫跨前後端、雲端與 AI 整合的完整技術能力</div>
+    <div class="trusted-sub">Full-spectrum capabilities across frontend, backend, cloud, and AI integration</div>
   </div>
   <div class="skill-grid">
     <div class="skill-pill">
@@ -821,17 +791,17 @@
   <div class="about-grid">
     <div>
       <div class="section-eyebrow">About</div>
-      <h2 class="section-title">把模糊需求轉成可穩定交付的工程體系</h2>
+      <h2 class="section-title">Turning Ambiguous Requirements into Reliable Engineering Systems</h2>
     </div>
     <div class="about-right">
       <p class="lead">
-        我是JuSuHo，現任全台最大連鎖日間照顧集團技術負責人，畢業於國立台灣大學資訊工程研究所。
+        I'm JuSuHo, currently serving as Head of Technology at Taiwan's largest chain of adult day care centers, and a graduate of the National Taiwan University Graduate Institute of Computer Science and Information Engineering.
       </p>
       <p>
-        過去 10年間，我的工作橫跨推動AI轉型、商業決策、全端開發、系統整合、專案管理、雲端架構與工程團隊建立。我不只負責系統開發，也負責把流程、品質、協作、技術決策與治理機制一起建立起來。
+        Over the past 10 years, my work has spanned AI transformation, business decision-making, full-stack development, systems integration, project management, cloud architecture, and engineering team building. I don't just build systems—I establish the processes, quality standards, collaboration norms, technical decision frameworks, and governance mechanisms that make them sustainable.
       </p>
       <p class="body-text">
-        近期我也持續把 AI 導入至公司各個環節，包含團隊日常開發流程，讓程式生成、重構、測試與知識傳遞更具槓桿，不把 AI 當話題，而是提升企業利潤與交付速度的實用武器。
+        I've been continuously integrating AI across every layer of the organization—including the team's daily development workflow—making code generation, refactoring, testing, and knowledge transfer more leveraged. I don't treat AI as a buzzword; I treat it as a practical tool for improving business profitability and delivery velocity.
       </p>
     </div>
   </div>
@@ -842,42 +812,42 @@
   <div class="section-header">
     <div>
       <div class="section-eyebrow">Result</div>
-      <h2 class="section-title">AI 落地實績</h2>
+      <h2 class="section-title">AI Implementations</h2>
     </div>
     <div class="section-subtitle">
-      不只導入工具，而是把 AI 嵌入流程、創造可量化的業務成果。
+      Not just tooling—AI embedded in workflows, creating measurable business outcomes.
     </div>
   </div>
   <div class="ai-track-grid">
     <div class="ai-track-card">
       <div class="ai-track-num">01</div>
-      <div class="ai-track-card-title">AI 照護計畫自動生成系統（長照場域）</div>
-      <div class="ai-track-card-desc">基於 LLM 設計並實作 AI 照護計畫自動生成系統，將結構化評估數據與個案資料轉換為標準化照護計畫，將計畫撰寫時間從平均 30 分鐘壓縮至 5 分鐘以內，顯著減輕前線人員行政負擔。導入回饋機制建立模型持續優化迴圈，並透過結構化輸出約束降低醫療場域的幻覺風險。最低導入阻力並取得高達88%採用率。</div>
+      <div class="ai-track-card-title">AI Care Plan Generation System (Elder Care)</div>
+      <div class="ai-track-card-desc">Designed and implemented an LLM-based system that transforms structured assessment data and case records into standardized care plans. Reduced average plan writing time from 30 minutes to under 5 minutes—significantly relieving frontline administrative burden. Implemented a feedback loop for continuous model improvement and applied structured output constraints to reduce hallucination risk in clinical settings. Achieved minimal adoption friction with an 88% adoption rate.</div>
     </div>
     <div class="ai-track-card">
       <div class="ai-track-num">02</div>
-      <div class="ai-track-card-title">研發流程全面 AI 化與產能槓桿</div>
-      <div class="ai-track-card-desc">深入評估並將 AI 工具整合至工程團隊日常 Workflow。不只是發帳號，更建立 AI 輔助 Code Review、單元測試自動生成與重構的標準作業準則。成功將功能交付產能顯著提升 25%，並降低新進工程師訓練與知識傳遞成本。</div>
+      <div class="ai-track-card-title">Full AI Integration in R&D Workflows</div>
+      <div class="ai-track-card-desc">Deeply evaluated and integrated AI tools into the engineering team's daily workflow. Beyond issuing licenses, established SOPs for AI-assisted code review, automated unit test generation, and refactoring. Successfully increased feature delivery capacity by 25% and reduced onboarding and knowledge transfer costs for new engineers.</div>
     </div>
     <div class="ai-track-card">
       <div class="ai-track-num">03</div>
-      <div class="ai-track-card-title">AI 驅動的知識管理與決策支援</div>
-      <div class="ai-track-card-desc">建立企業級知識庫，將數百份技術文件、架構決策與營運 SOP 結構化並導入 RAG 系統。使非技術背景的業務與管理人員能透過自然語言快速查詢與決策，大幅減少跨部門溝通成本與資訊落差。</div>
+      <div class="ai-track-card-title">AI-Driven Knowledge Management & Decision Support</div>
+      <div class="ai-track-card-desc">Built an enterprise knowledge base by structuring hundreds of technical documents, architecture decisions, and operational SOPs into a RAG system. Enabled non-technical business and management staff to query and make decisions via natural language—significantly reducing cross-department communication costs and information gaps.</div>
     </div>
     <div class="ai-track-card">
       <div class="ai-track-num">04</div>
-      <div class="ai-track-card-title">AI 驅動的智能客服與工單自動化</div>
-      <div class="ai-track-card-desc">導入具備深度語意理解能力的企業級 AI 智能客服架構，針對高頻問題進行 24 小時精準回覆。深度整合後台系統，讓 AI 自動摘要客戶請求、辨識潛在意圖並分派工單，有效降低前線客服 40% 以上的重複性作業負載。</div>
+      <div class="ai-track-card-title">AI-Powered Customer Service & Ticket Automation</div>
+      <div class="ai-track-card-desc">Deployed an enterprise-grade AI customer service system with deep semantic understanding, delivering 24/7 precise responses to high-frequency inquiries. Deeply integrated with backend systems, enabling AI to automatically summarize customer requests, identify potential intent, and dispatch tickets—reducing frontline repetitive workload by 40%+.</div>
     </div>
     <div class="ai-track-card">
       <div class="ai-track-num">05</div>
-      <div class="ai-track-card-title">行銷與營運自動化工作流程 (AI Workflow)</div>
-      <div class="ai-track-card-desc">結合 LLM 與自動化整合工具，為非技術團隊打造專屬的自動化 Pipeline。從市場資料搜集、多語系 SEO 內容生成、到跨社群渠道的自動推播排程，將內容產製週期從數天大幅縮短至數小時內完成。</div>
+      <div class="ai-track-card-title">Marketing & Operations Automation Workflows</div>
+      <div class="ai-track-card-desc">Combined LLMs with automation integration tools to build custom pipelines for non-technical teams. From market data collection, multilingual SEO content generation, to automated cross-channel social posting schedules—compressing content production cycles from days to hours.</div>
     </div>
     <div class="ai-track-card" style="background:var(--bg-inverse);color:var(--text-inverse);">
       <div class="ai-track-num" style="color:rgba(240,237,230,0.4);">06</div>
       <div class="ai-track-card-title" style="color:var(--text-inverse);">To Be Continued</div>
-      <div class="ai-track-card-desc" style="color:rgba(240,237,230,0.65);">AI 整合的邊界仍在快速移動。持續研究 Agent 架構、MCP 協議與跨系統整合模式，將每一個新場景都視為下一個可落地的機會。</div>
+      <div class="ai-track-card-desc" style="color:rgba(240,237,230,0.65);">The boundaries of AI integration are still moving fast. Continuously researching Agent architectures, MCP protocols, and cross-system integration patterns—treating every new use case as the next opportunity to ship.</div>
     </div>
   </div>
 </div>
@@ -887,10 +857,10 @@
   <div class="section-header">
     <div>
       <div class="section-eyebrow">Selected Achievements</div>
-      <h2 class="section-title">代表<br>成果</h2>
+      <h2 class="section-title">Key<br>Results</h2>
     </div>
     <div class="section-subtitle">
-      不是任務清單，而是能說服管理層的經營結果。聚焦在團隊能力、AI 生產力、成本效率與大型專案治理。
+      Not a task list—results that convince leadership. Focused on team capability, AI productivity, cost efficiency, and large-scale project governance.
     </div>
   </div>
 
@@ -898,84 +868,82 @@
     <div class="ach-row">
       <div class="ach-num">01</div>
       <div>
-        <div class="ach-name">建立跨職能研發團隊</div>
-        <div class="ach-desc">從零建立並帶領 6+ 人跨職能團隊，導入 Scrum 與穩定交付節奏，培養團隊成員成長，支撐企業級日照資訊系統SaaS與雙平台 App 開發。</div>
+        <div class="ach-name">Built Cross-Functional Engineering Team from Scratch</div>
+        <div class="ach-desc">Built and led a 6+ person cross-functional team from zero. Introduced Scrum and a stable delivery rhythm, fostered member growth, and supported enterprise-grade day care SaaS and dual-platform app development.</div>
       </div>
       <div><span class="ach-tag">Leadership</span></div>
     </div>
     <div class="ach-row">
       <div class="ach-num">02</div>
       <div>
-        <div class="ach-name">推動 AI 協作開發與工程知識槓桿</div>
-        <div class="ach-desc">將 AI 導入程式生成、重構、測試撰寫與知識轉譯流程，提升團隊開發槓桿與交付效率。</div>
+        <div class="ach-name">AI-Augmented Development & Engineering Knowledge Leverage</div>
+        <div class="ach-desc">Integrated AI into code generation, refactoring, test writing, and knowledge translation workflows—boosting team delivery leverage and efficiency significantly.</div>
       </div>
       <div><span class="ach-tag">AI</span></div>
     </div>
     <div class="ach-row">
       <div class="ach-num">03</div>
       <div>
-        <div class="ach-name">管理大型專案與跨單位協作</div>
-        <div class="ach-desc">於電信業龍頭服務期間負責大型系統整合、IDC機房建置、供應商管理，累積經手專案金額逾新台幣 5 億元。</div>
+        <div class="ach-name">Large-Scale Project & Cross-Unit Collaboration Management</div>
+        <div class="ach-desc">During tenure at Taiwan's leading telco, managed large-scale system integrations, IDC data center builds, and vendor relationships—with total project value exceeding NT$500M.</div>
       </div>
-      <div><span class="ach-tag">NT$5億+</span></div>
+      <div><span class="ach-tag">NT$500M+</span></div>
     </div>
     <div class="ach-row">
       <div class="ach-num">04</div>
       <div>
-        <div class="ach-name">主導雲端架構重構</div>
-        <div class="ach-desc">推動由傳統單體系統轉向 GCP 雲端架構，最終降低約 30% 運行成本並提升系統韌性。</div>
+        <div class="ach-name">Led Cloud Architecture Modernization</div>
+        <div class="ach-desc">Drove migration from legacy monolithic systems to GCP cloud architecture, ultimately reducing operating costs by ~30% and improving system resilience.</div>
       </div>
       <div><span class="ach-tag">Architecture</span></div>
     </div>
     <div class="ach-row">
       <div class="ach-num">05</div>
       <div>
-        <div class="ach-name">建立 CI/CD 與工程標準化</div>
-        <div class="ach-desc">以 GitHub Actions 取代人工部署，將發布流程從 30 分鐘縮短至 10 分鐘內，降低人工作業風險。</div>
+        <div class="ach-name">Established CI/CD & Engineering Standardization</div>
+        <div class="ach-desc">Replaced manual deployments with GitHub Actions, cutting release cycles from 30 minutes to under 10 minutes and significantly reducing human error risk.</div>
       </div>
       <div><span class="ach-tag">DevOps</span></div>
     </div>
-    
     <div class="ach-row">
       <div class="ach-num">06</div>
       <div>
-        <div class="ach-name">整合 IoT、BLE 與 OCR 應用</div>
-        <div class="ach-desc">將醫療量測設備資料自動串接至照護流程，以 Python 與 OCR 自動化資料處理，降低人工輸入成本與錯誤率。</div>
+        <div class="ach-name">Integrated IoT, BLE & OCR Applications</div>
+        <div class="ach-desc">Automated medical device data streams into care workflows using Python and OCR—reducing manual data entry costs and error rates.</div>
       </div>
       <div><span class="ach-tag">IoT</span></div>
     </div>
-    
   </div>
 </div>
 
 <!-- EXPERTISE -->
 <div class="expertise-section" id="experience">
   <div class="section-eyebrow">What I Lead</div>
-  <h2 class="section-title">我能負責的範圍</h2>
+  <h2 class="section-title">Scope of Responsibility</h2>
   <div class="expertise-grid">
     <div class="exp-cell">
       <div class="exp-cell-title">Engineering Leadership</div>
-      <div class="exp-cell-desc">團隊建立、角色分工、Scrum、跨職能協作、Code Review 與交付流程設計。</div>
+      <div class="exp-cell-desc">Team building, role definition, Scrum, cross-functional collaboration, code review, and delivery process design.</div>
     </div>
     <div class="exp-cell">
       <div class="exp-cell-title">Architecture & Platform</div>
-      <div class="exp-cell-desc">GCP、GKE、Cloud Run、Cloud SQL、架構演進、微服務化、CI/CD 與 Monorepo 管理。</div>
+      <div class="exp-cell-desc">GCP, GKE, Cloud Run, Cloud SQL, architecture evolution, microservices migration, CI/CD, and Monorepo management.</div>
     </div>
     <div class="exp-cell">
       <div class="exp-cell-title">AI-Enabled Delivery</div>
-      <div class="exp-cell-desc">AI 協作開發流程設計、程式生成與重構應用、測試撰寫輔助、知識轉譯與團隊產能槓桿。</div>
+      <div class="exp-cell-desc">AI-assisted development workflow design, code generation & refactoring, test writing support, knowledge translation, and team capacity leverage.</div>
     </div>
     <div class="exp-cell">
       <div class="exp-cell-title">Business Alignment</div>
-      <div class="exp-cell-desc">需求釐清、優先序協調、跨部門溝通、供應商協作、交付節奏與風險管理。</div>
+      <div class="exp-cell-desc">Requirements clarification, prioritization, cross-department communication, vendor collaboration, delivery cadence, and risk management.</div>
     </div>
     <div class="exp-cell">
       <div class="exp-cell-title">Governance & Operations</div>
-      <div class="exp-cell-desc">ISO 27001、個資保護、Microsoft 365 導入、IT 基礎建設與權限治理。</div>
+      <div class="exp-cell-desc">ISO 27001, personal data protection, Microsoft 365 deployment, IT infrastructure, and access governance.</div>
     </div>
     <div class="exp-cell" style="background:var(--bg-inverse);color:var(--text-inverse);">
       <div class="exp-cell-title" style="color:rgba(240,237,230,0.6);">Open to</div>
-      <div class="exp-cell-desc" style="color:var(--text-inverse);font-size:17px;font-weight:500;line-height:1.5;">Engineering Manager<br>Technical Lead<br>Fractional CTO<br>企業 AI 導入評估與架構設計</div>
+      <div class="exp-cell-desc" style="color:var(--text-inverse);font-size:17px;font-weight:500;line-height:1.5;">Engineering Manager<br>Technical Lead<br>Fractional CTO<br>Enterprise AI Consulting</div>
     </div>
   </div>
 </div>
@@ -987,7 +955,7 @@
       <div class="section-eyebrow">Contact</div>
       <h2 class="contact-headline">LET'S<br>CONNECT</h2>
       <p class="contact-desc">
-        如果你正在尋找能夠帶團隊、建立交付機制、推動架構演進、導入 AI 協作開發的技術主管，歡迎與我聯絡。
+        If you're looking for a technical leader who can build teams, establish delivery systems, drive architecture evolution, and integrate AI into engineering workflows—I'd love to connect.
       </p>
     </div>
     <div class="contact-links">
@@ -1029,7 +997,6 @@
   menuBtn.addEventListener('click', () => {
     navLinks.classList.toggle('open');
   });
-  // 點選連結後自動收起
   navLinks.querySelectorAll('a').forEach(a => {
     a.addEventListener('click', () => navLinks.classList.remove('open'));
   });
